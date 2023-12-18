@@ -1,0 +1,46 @@
+.header-in-scroll {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: 0.3s linear;
+  top: 0px;
+  z-index: 3;
+  width: 100%;
+  background-color: $main-green;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    .drawer-btn {
+      display: flex;
+    }
+    .header-main-content-right {
+      @include myMedia(600px) {
+        width: 40%;
+      }
+    }
+    .nav-right {
+      span,
+      div > a {
+        @include myMedia(600px) {
+          font-size: 10px !important;
+        }
+      }
+      & > div {
+        @include myMedia(360px) {
+          width: 100%;
+        }
+      }
+      @include myMedia(360px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @include myMedia(1230px) {
+      justify-content: space-around;
+    }
+  }
+}
+.header-visible {
+  transform: translateY(0);
+}

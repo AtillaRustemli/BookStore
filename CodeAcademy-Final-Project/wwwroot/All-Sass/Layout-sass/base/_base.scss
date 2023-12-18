@@ -1,0 +1,34 @@
+.container {
+  width: 1200px;
+  margin: 0px auto;
+  @include myMedia(1230px) {
+    width: 90%;
+  }
+}
+body {
+  width: 100vw;
+  font-family: $main-font-family;
+  overflow-x: hidden;
+}
+section,
+.nav {
+  margin-bottom: 30px;
+}
+
+.body-bg-black::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+.body-bg-white::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+  background-color: #d2d6dbe6;
+}

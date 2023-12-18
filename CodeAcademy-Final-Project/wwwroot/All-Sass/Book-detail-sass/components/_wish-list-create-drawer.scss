@@ -1,0 +1,189 @@
+.wish-list-drawer-open {
+  transform: translateX(0px) !important;
+}
+.wish-list-create-drawer {
+  position: fixed;
+  z-index: 4;
+  right: 0px;
+  top: 0px;
+  width: 700px;
+  height: 100vh;
+  padding: 20px;
+  color: #1f2a37;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  border-radius: 10px 0px 0px 10px;
+  transform: translateX(100%);
+  transition: 0.3s linear;
+  @include myMedia(700px) {
+    width: 95%;
+  }
+  .form-in-wish-list-create-drawer {
+    width: 100%;
+    padding: 40px 40px 20px;
+    display: flex;
+    row-gap: 55px;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 10px;
+    & > h2,
+    & > p {
+      @include myMedia(490px) {
+        text-align: center;
+      }
+    }
+    @include myMedia(490px) {
+      align-items: center;
+      padding: 20px 20px 10px;
+    }
+  }
+  .create-drawer-cancel-btn {
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    right: 0px;
+    top: 0px;
+    transition: 0.2s linear;
+    font-size: 20px;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  .wish-list-drawer-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include myMedia(490px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    .wish-list {
+      width: 75%;
+
+      @include myMedia(490px) {
+        width: 85%;
+      }
+      select {
+        width: 100%;
+        border: 1px solid #1f2a378c;
+        padding: 15px;
+        border-radius: 5px;
+        color: #1f2a378c;
+        font-size: 14px;
+        outline: none;
+      }
+    }
+    .add-to-list-btn {
+      height: 100%;
+      width: 22%;
+
+      @include myMedia(490px) {
+        width: 80%;
+      }
+      button {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        color: white;
+        background-color: $main-green-light;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        @include myMedia(490px) {
+          height: 40px;
+        }
+        p {
+          position: absolute;
+          z-index: 2;
+        }
+        @include Btn-hover-animation-flexable($main-green);
+      }
+    }
+  }
+  .form-in-create-list-drawer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+    .buttons {
+      display: flex;
+      width: 100%;
+      column-gap: 30px;
+      @include myMedia(390px) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+      }
+      button {
+        cursor: pointer;
+        width: 30%;
+        height: 40px;
+        border: 1px solid $main-green-light;
+        background-color: inherit;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $main-green-light;
+
+        @include myMedia(390px) {
+          width: 60%;
+          height: 55px;
+        }
+        &:hover {
+          color: white;
+        }
+        @include Btn-hover-animation-flexable($main-green);
+        p {
+          position: absolute;
+          z-index: 2;
+        }
+      }
+      button[type="submit"] {
+        color: white;
+        background-color: $main-green-light;
+      }
+    }
+  }
+  .input-in-create-list-drawer {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    column-gap: 15px;
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      border: 2px solid #1f2a3729;
+      border-radius: 5px;
+      @include myMedia(580px) {
+        width: 50%;
+      }
+    }
+    & > p {
+      font-weight: 600;
+      @include myMedia(330px) {
+        font-size: 12px;
+      }
+    }
+    .list-type-in-drawer {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    #input-in-create-list-drawer-title {
+      align-self: center;
+    }
+  }
+}

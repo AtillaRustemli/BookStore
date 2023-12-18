@@ -20,4 +20,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Views\Shared\Components\" />
+  </ItemGroup>
+
 </Project>

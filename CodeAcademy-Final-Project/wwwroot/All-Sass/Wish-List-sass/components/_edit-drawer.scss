@@ -1,0 +1,141 @@
+.edit-drawer {
+  display: none;
+  position: fixed;
+  width: 890px;
+  z-index: 4;
+  margin: 0px auto;
+  justify-self: center;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: 0.2s linear;
+  padding: 20px 20px 40px;
+  border: 1px solid;
+  border-radius: 10px;
+
+  @include myMedia(900px) {
+    width: 90%;
+  }
+  &-cancel-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.1s linear;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    & > h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .wish-list-drawer-form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      align-items: start;
+      font-size: 14px;
+      @include myMedia(400px) {
+        font-size: 12px;
+      }
+      @include myMedia(360px) {
+        font-size: 10px;
+      }
+      & > div > p {
+        font-weight: 600;
+      }
+      .edit-drawer-wish-list {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        width: 100%;
+
+        @include myMedia(360px) {
+          flex-direction: column;
+          align-self: center;
+          row-gap: 10px;
+        }
+        input {
+          padding: 5px;
+          width: 40%;
+          border: 1px solid #6767673d;
+          @include myMedia(550px) {
+            width: 60%;
+          }
+        }
+      }
+      .wish-list-status {
+        display: flex;
+        column-gap: 20px;
+
+        @include myMedia(360px) {
+          flex-direction: column;
+          align-self: center;
+          row-gap: 10px;
+          justify-content: center;
+          text-align: center;
+        }
+        .list-status {
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+        }
+        label {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .edit-drawer-save-btn {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        @include myMedia(690px) {
+          width: 80%;
+        }
+        @include myMedia(360px) {
+          flex-direction: column;
+          justify-content: center;
+          align-self: center;
+        }
+        button {
+          cursor: pointer;
+          width: 35%;
+          height: 40px;
+          font-size: 13px;
+          font-weight: 600;
+          background-color: $main-green-light;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          @include myMedia(360px) {
+            width: 80%;
+          }
+          p {
+            position: absolute;
+            z-index: 2;
+          }
+        }
+        .save {
+          @include Btn-hover-animation-flexable($main-green);
+        }
+        .cancel-edit-drawer {
+          background-color: white;
+          color: $main-green-light;
+        }
+      }
+    }
+  }
+}

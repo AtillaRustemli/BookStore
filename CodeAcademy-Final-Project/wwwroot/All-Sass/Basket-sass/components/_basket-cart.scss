@@ -1,0 +1,371 @@
+.basket-cart {
+  color: #1f2a37;
+  .container {
+    display: flex;
+    position: relative;
+    @include myMedia(1040px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .cart {
+    width: calc(100% / 1.5);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    @include myMedia(1040px) {
+      width: 80%;
+      margin-bottom: 30px;
+    }
+    @include myMedia(800px) {
+      width: 100%;
+    }
+    & > div {
+      position: relative;
+      padding: 14px 10px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: 1px solid;
+      }
+    }
+    .title {
+      width: 100%;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .cart-title {
+        font-size: 24px;
+        font-weight: 600;
+        width: 30%;
+        @include myMedia(1200px) {
+          width: 42%;
+        }
+        @include myMedia(1150px) {
+          width: 45%;
+        }
+        @include myMedia(1110px) {
+          width: 49%;
+        }
+        @include myMedia(1070px) {
+          width: 51%;
+        }
+        @include myMedia(1040px) {
+          width: auto;
+        }
+        span {
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+      .counter-title,
+      .book-price-title {
+        @include myMedia(1040px) {
+          display: none;
+        }
+      }
+    }
+    .cart-child {
+      display: flex;
+      .image.container {
+        width: 10%;
+        a {
+          width: 100%;
+          display: block;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      &-book-description {
+        width: 90%;
+        color: #1f2a37;
+
+        padding-left: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p {
+          font-size: 14px;
+          font-weight: 400;
+        }
+        .description {
+          flex: 0 1 auto;
+          a {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            @include myMedia(1040px) {
+              row-gap: 5px;
+              margin-bottom: 10px;
+            }
+            @include myMedia(600px) {
+              width: 80%;
+              align-self: flex-start;
+              align-items: start;
+            }
+          }
+          &:hover .description-title {
+            text-decoration: underline;
+          }
+        }
+        .description-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+      .book-count-in-busket {
+        font-weight: 400;
+        & > div {
+          display: flex;
+          border: 1px solid;
+          border-radius: 5px;
+          a,
+          p {
+            padding: 6px 8px;
+            @include myMedia(350px) {
+              padding: 2px 4px;
+            }
+            @include myMedia(300px) {
+              padding: 1px 2px;
+            }
+          }
+          a {
+            transition: 0.2s linear;
+            &:hover {
+              background-color: #1f2a373b;
+            }
+          }
+        }
+      }
+      .book-price,
+      .book-count-in-busket,
+      .total-book-price {
+        @include myMedia(400px) {
+          font-size: 12px !important;
+          p {
+            font-size: 12px;
+          }
+        }
+        @include myMedia(320px) {
+          font-size: 10px !important;
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+      .stock-position {
+        width: 100%;
+        order: 2;
+        @include myMedia(600px) {
+          display: flex;
+          width: 85%;
+          align-self: flex-start;
+          align-items: start;
+        }
+        .in-stock {
+          color: $main-green-light;
+          @include myMedia(1110px) {
+            font-size: 12px;
+          }
+          & > span {
+            color: #333;
+            i {
+              margin-left: 5px;
+            }
+          }
+          i {
+            margin-right: 5px;
+            color: $main-green-light;
+          }
+        }
+        .ended {
+          color: red;
+          & > span {
+            color: #333;
+            i {
+              margin-left: 5px;
+            }
+          }
+          i {
+            margin-right: 5px;
+            color: red;
+          }
+        }
+      }
+      .delete-button {
+        width: 100%;
+        order: 4;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        a {
+          transition: 0.2s linear;
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  .total-count {
+    width: calc(100% / 3);
+    padding-left: 24px;
+    transform: translateY(0px);
+    transition: 0.2s linear;
+    height: auto;
+    position: relative;
+    @include myMedia(1040px) {
+      width: 60%;
+    }
+    @include myMedia(500px) {
+      width: 80%;
+    }
+    @include myMedia(340px) {
+      width: 90%;
+    }
+  }
+  .total-count-inner {
+    width: 100%;
+    background-color: #f3f4f6;
+    padding: 17.5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    .inner-title {
+      font-weight: 600;
+      font-size: 20px;
+      width: 100%;
+      position: relative;
+      padding-bottom: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: 1px solid #d6d6d6;
+      }
+    }
+    .payment-detail {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 0px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .payment {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      a {
+        width: 80%;
+        position: relative;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: $mainblue-light;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        p {
+          position: absolute;
+          z-index: 2;
+          i {
+            margin-left: 5px;
+          }
+        }
+        @include Btn-hover-animation-flexable($mainblue-dark);
+      }
+    }
+  }
+  .for-help {
+    padding: 17.5px;
+    background-color: #f3f4f6;
+    border-radius: 5px;
+
+    .payment-method {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      padding: 15px 0px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: 1px solid #d6d6d6;
+      }
+      h4 {
+        width: 100%;
+        font-size: 18px;
+
+        @include myMedia(590px) {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+      div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        row-gap: 10px;
+
+        img {
+          width: calc(100% / 6 - 10px);
+
+          @include myMedia(590px) {
+            width: calc(100% / 4);
+          }
+        }
+      }
+    }
+  }
+  .number {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include myMedia(300px) {
+      font-size: 14px;
+    }
+  }
+  .card-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    align-items: center;
+    @include myMedia(1040px) {
+      order: 3;
+      padding: 15px 0px;
+    }
+    @include myMedia(490px) {
+      font-size: 12px !important;
+    }
+  }
+}
+.total-count-fixed {
+  transform: translateY(0px);
+  transition: 0.2s linear;
+  width: 100%;
+}
+.foxed-p-for-total-count {
+  position: sticky;
+  top: 100px;
+  right: 0px;
+}

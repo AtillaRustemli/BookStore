@@ -1,0 +1,18 @@
+%Btn-hover-animation {
+  //width ve height daxildeki elementden asili olmamalidir!
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    right: 0px;
+    background-color: $main-green;
+    transform: translateX(-100%);
+    transition: 0.2s ease-in-out;
+  }
+  &:hover::before {
+    transform: translateX(-5%);
+  }
+}

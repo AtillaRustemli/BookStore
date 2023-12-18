@@ -1,0 +1,43 @@
+.discover-more {
+  width: 100%;
+  .container {
+    padding: 30px 15px;
+    background-color: $bg-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: $main-font-family;
+    text-align: center;
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+  .discover-me-icon-list {
+    display: flex;
+    justify-content: space-around;
+    li {
+      span {
+        border-radius: 50%;
+        background-color: #888888;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        transition: 0.3s linear;
+        &:hover i {
+          scale: 1.1;
+        }
+        &:hover {
+          background-color: $main-green;
+        }
+        i {
+          position: absolute;
+          transition: 0.3s linear;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "./variables";
+@import "../utilities/mixins";
+@import "../utilities/shablons";
+@import "./reset";
+@import "./base";
+@import "../../slick-sass/slick-theme";
+@import "../../slick-sass/slick";
+@import "../components/basket-cart";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap");

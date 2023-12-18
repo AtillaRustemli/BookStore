@@ -1,0 +1,584 @@
+.wish-list-account {
+  width: 100%;
+  background-image: url(../../../images/user-account-bg-image.jpg);
+  background-repeat: no-repeat;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  &-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-weight: 600;
+    padding-top: 34px;
+    padding-bottom: 15px;
+    color: white;
+    @include myMedia(360px) {
+      flex-direction: column;
+    }
+    h4 {
+      font-size: 24px;
+      padding: 10px 10px 10px 0px;
+    }
+    a {
+      height: 35px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      position: relative;
+      @include Btn-hover-animation-flexable(white);
+      &::before {
+        transition: 0.4s linear !important;
+      }
+      &:hover {
+        color: $main-green-light;
+      }
+      p {
+        img {
+          width: 15px;
+        }
+        position: absolute;
+        z-index: 2;
+      }
+    }
+  }
+  .wish-list-account-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include myMedia(700px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 15px;
+    }
+    &-left {
+      width: 25%;
+      @include myMedia(760px) {
+        width: 35%;
+        overflow: hidden;
+      }
+
+      @include myMedia(700px) {
+        width: 50%;
+        overflow: hidden;
+      }
+      @include myMedia(680px) {
+        width: 68%;
+      }
+      .wish-list-list {
+        width: 100%;
+
+        & > li {
+          background-color: $bg-gray;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 10px;
+          border-bottom: 2px solid #e5e5e5;
+          a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+      .create-new-list {
+        width: 100%;
+        background-color: $bg-gray;
+        border-bottom: 2px solid #e5e5e5;
+        height: 70px;
+        padding: 10px 10px;
+        a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border: 2px solid $main-green-light;
+          color: $main-green-light;
+          font-weight: 600;
+          position: relative;
+          @include myMedia(590px) {
+            font-size: 13px;
+          }
+          @include myMedia(540px) {
+            font-size: 16px;
+          }
+
+          &::before {
+            transition: 0.4s !important;
+          }
+          &:hover {
+            color: white;
+          }
+          @include Btn-hover-animation-flexable($main-green);
+          p {
+            position: absolute;
+            z-index: 2;
+            i {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    &-right {
+      padding: 16px;
+      width: 70%;
+      background-color: white;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      @include myMedia(780px) {
+        width: 75%;
+      }
+      @include myMedia(700px) {
+        width: 95%;
+      }
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include myMedia(540px) {
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
+        }
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+
+          @include myMedia(540px) {
+            text-align: center;
+            font-size: 20px;
+          }
+        }
+        .edit-in-wish-list {
+          width: 50%;
+          display: flex;
+          column-gap: 10px;
+          justify-content: flex-end;
+
+          @include myMedia(480px) {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            row-gap: 10px;
+          }
+
+          a {
+            border: 2px solid $main-green-light;
+            font-weight: 600;
+            height: 100%;
+            color: $main-green-light;
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            @include myMedia(480px) {
+              width: 60% !important;
+            }
+            @include myMedia(540px) {
+              height: 30px;
+            }
+
+            @include myMedia(870px) {
+              font-size: 13px;
+            }
+
+            @include myMedia(620px) {
+              font-size: 10px;
+            }
+            @include myMedia(1160px) {
+              width: 30%;
+            }
+            @include myMedia(760px) {
+              width: 40%;
+              font-size: 10px;
+            }
+            @include Btn-hover-animation-flexable($main-green);
+            p {
+              position: absolute;
+              z-index: 2;
+            }
+            &:hover {
+              color: white;
+            }
+          }
+          .share {
+            width: 30%;
+            i {
+              margin-right: 5px;
+            }
+
+            @include myMedia(1160px) {
+              width: 40%;
+            }
+            @include myMedia(760px) {
+              width: 50%;
+            }
+          }
+        }
+      }
+      .wish-list-nav {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        & > form {
+          cursor: pointer;
+          & * {
+            cursor: pointer;
+          }
+          @include myMedia(740px) {
+            label {
+              font-size: 13px;
+            }
+          }
+          @include myMedia(600px) {
+            label {
+              font-size: 10px;
+            }
+          }
+          @include myMedia(540px) {
+            label {
+              font-size: 13px;
+            }
+          }
+        }
+        &-list {
+          display: flex;
+          column-gap: 15px;
+          & > li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-size: 13px;
+            &::before {
+              content: "";
+              height: 80%;
+              position: absolute;
+              left: -5px;
+              border: 1px solid #3c3c3c63;
+            }
+            &:hover {
+              text-decoration: underline;
+
+              text-underline-offset: 4px;
+              color: $main-green-light;
+            }
+            @include myMedia(740px) {
+              font-size: 10px;
+            }
+
+            @include myMedia(600px) {
+              font-size: 8px;
+            }
+          }
+        }
+        li:nth-child(1) {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .wish-list-book {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        @include myMedia(400px) {
+          justify-content: center;
+        }
+        & > li {
+          width: calc(100% / 3);
+          padding: 10px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include myMedia(1000px) {
+            width: calc(100% / 2);
+          }
+          @include myMedia(400px) {
+            width: 95%;
+          }
+          &::before {
+            content: "";
+            width: 80%;
+            position: absolute;
+            bottom: 0px;
+            border: 1.5px solid #e0e0e0;
+          }
+          &::after {
+            content: "";
+            height: 80%;
+            position: absolute;
+            right: 0px;
+            top: 10%;
+            border: 1.5px solid #e0e0e0;
+          }
+          .check-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            .checkbox-in-wish-list {
+              cursor: pointer;
+            }
+          }
+          .book-image {
+            width: 50%;
+            height: 230px;
+            @include myMedia(600px) {
+              height: auto;
+              margin-bottom: 10px;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          .book-name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            row-gap: 5px;
+            margin-bottom: 5px;
+            h4 {
+              font-size: 15px;
+            }
+            p {
+              font-size: 13px;
+              @include myMedia(500px) {
+                font-size: 10px;
+              }
+            }
+          }
+          .book-author {
+            color: $main-green-light;
+            font-size: 14px;
+            margin-bottom: 15px;
+            @include myMedia(600px) {
+              margin-bottom: 5px;
+            }
+          }
+          .book-cover-type {
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            padding: 6px 6px 10px;
+            &::before {
+              content: "";
+              width: 100%;
+              position: absolute;
+              border: 1px solid #605f5f21;
+              bottom: 0px;
+              left: 0px;
+            }
+          }
+          .book-in-stock {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+            padding: 6px 6px 10px;
+            &::before {
+              content: "";
+              width: 100%;
+              position: absolute;
+              border: 1px solid #605f5f21;
+              bottom: 0px;
+              left: 0px;
+            }
+          }
+          .book-payment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            font-weight: 600;
+            row-gap: 10px;
+            h4 {
+              font-size: 22px;
+            }
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: relative;
+              border-radius: 5px;
+              font-size: 14px;
+              width: 70%;
+              height: 40px;
+              background-color: $mainblue-light;
+              color: white;
+              @include Btn-hover-animation-flexable($mainblue-dark);
+              p {
+                position: absolute;
+                z-index: 2;
+              }
+            }
+          }
+          .remove-btn {
+            a {
+              display: flex;
+              align-items: center;
+              padding: 8px 10px;
+              font-size: 14px;
+              font-weight: 600;
+              i {
+                color: $font-color;
+                margin-right: 5px;
+              }
+              p {
+                color: $main-green-light;
+              }
+            }
+          }
+        }
+      }
+      .select-submit {
+        border-radius: 5px;
+        position: fixed;
+        z-index: 3;
+        bottom: 0px;
+        margin: 0px auto;
+        background-color: red;
+        width: 50%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: white;
+        transform: translateY(100%);
+        transition: 0.3s linear;
+        @include myMedia(1230px) {
+          width: 60%;
+        }
+        @include myMedia(700px) {
+          width: 75%;
+        }
+        @include myMedia(500px) {
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
+        }
+        button {
+          cursor: pointer;
+          height: 40px;
+          width: 25%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          font-weight: 600;
+          position: relative;
+          @include myMedia(930px) {
+            width: 35%;
+          }
+          @include myMedia(580px) {
+            font-size: 10px !important;
+          }
+          @include myMedia(500px) {
+            width: 80% !important;
+            font-size: 12px !important;
+          }
+          @include myMedia(300px) {
+            font-size: 10px !important;
+          }
+          i {
+            margin-left: 5px;
+          }
+          p {
+            position: absolute;
+            z-index: 2;
+          }
+        }
+        .select-submit-left {
+          width: 60%;
+          display: flex;
+          justify-content: space-between;
+          column-gap: 10px;
+          padding: 10px;
+          @include myMedia(800px) {
+            width: 70%;
+          }
+          @include myMedia(500px) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+            width: 100%;
+            padding: 0px;
+          }
+          button {
+            width: 50%;
+            @include myMedia(930px) {
+              width: 60%;
+              font-size: 12px;
+            }
+          }
+        }
+        .wihs-list-move-btn {
+          border-color: #384250;
+          border: 1px solid $main-green-light;
+          color: #384250;
+          @include Btn-hover-animation-flexable($main-green);
+          &:hover {
+            color: white;
+          }
+
+          @include myMedia(1030px) {
+            font-size: 12px;
+          }
+        }
+        .busket-btn {
+          background-color: $mainblue-light;
+          color: white;
+          width: 40% !important;
+
+          @include Btn-hover-animation-flexable($mainblue-dark);
+
+          @include myMedia(500px) {
+            width: 80% !important;
+          }
+        }
+      }
+    }
+  }
+  .active {
+    background-color: #e5e5e5 !important;
+    font-weight: 600;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -35px;
+      bottom: 0px;
+      top: 0px;
+
+      border: 20px solid transparent;
+      border-left: 15px solid #e5e5e5;
+
+      box-sizing: border-box;
+    }
+  }
+  .wish-list-active {
+    color: $main-green-light;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .select-submit-btn-open {
+    transform: translateY(0px) !important;
+
+    box-shadow: 2px 2px 100px !important;
+  }
+}

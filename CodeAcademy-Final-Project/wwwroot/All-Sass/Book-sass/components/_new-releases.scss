@@ -1,0 +1,80 @@
+.new-releases {
+  width: 100%;
+
+  .new-releases-books {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include myMedia(680px) {
+      justify-content: center;
+    }
+  }
+  .new-releases-books-item {
+    position: relative;
+    width: 100px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    &:hover .checkout-in-book {
+      opacity: 1 !important;
+    }
+  }
+  .checkout-in-book {
+    opacity: 0;
+    transition: 0.2s linear;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 95%;
+    height: 20%;
+    background-color: white;
+    overflow: hidden;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > span {
+      font-size: 14px;
+      padding-left: 5px;
+    }
+    a {
+      height: 100%;
+      width: 40%;
+      background-color: $mainblue-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+  }
+  .priv-arrow,
+  .next-arrow {
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+  }
+  .priv-arrow {
+    margin-right: 15px;
+  }
+  .new-releases-btn {
+    display: flex;
+    justify-content: center;
+    button {
+      border: 1px solid $main-green;
+      padding: 10px;
+      background-color: inherit;
+      color: $main-green;
+    }
+  }
+  #slick-slide00 {
+    @include myMedia(480px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

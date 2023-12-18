@@ -1,0 +1,146 @@
+.promotions {
+  .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
+}
+.promotions-inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  &-item {
+    position: relative;
+    overflow: hidden;
+    width: calc(100% / 3 - 60px);
+    a {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20%;
+      & > img {
+        transform: translateY(10%);
+      }
+    }
+    .promotion-image {
+      width: 100%;
+    }
+
+    @include myMedia(800px) {
+      width: calc(100% / 2 - 40px);
+    }
+    @include myMedia(576px) {
+      width: calc(100% - 20px);
+    }
+  }
+
+  @include myMedia(800px) {
+    flex-wrap: wrap;
+  }
+  @include myMedia(576px) {
+    justify-content: center;
+  }
+}
+.promotion-inner-text {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  transform: translateY(40%);
+  transition: 0.3s linear;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: #53565a;
+  padding: 10px;
+  background-color: $bg-gray;
+  font-size: 14px;
+  padding-bottom: 30px;
+  @include myMedia(1560px) {
+    height: 80%;
+  }
+
+  @include myMedia(576px) {
+    height: 50%;
+  }
+  @include myMedia(385px) {
+    height: 75%;
+  }
+  h4 {
+    font-size: 16px;
+    font-size: 500;
+    @include myMedia(915px) {
+      font-size: 13px;
+    }
+
+    @include myMedia(800px) {
+      font-size: 16px;
+    }
+  }
+
+  @include myMedia(915px) {
+    font-size: 10px;
+  }
+
+  @include myMedia(800px) {
+    font-size: 14px;
+  }
+
+  .promotion-end-time {
+    position: absolute;
+    opacity: 0;
+    padding: 10px 0px;
+    bottom: 0px;
+  }
+}
+.promotion-hover {
+  padding: 20px 0px;
+  p {
+    display: none;
+  }
+  @include myMedia(900px);
+}
+
+.promotions-inner-item:hover .promotion-hover > p {
+  display: block;
+}
+.promotions-inner-item:hover .promotion-inner-text {
+  transform: translateY(0);
+}
+.promotions-inner-item:hover .promotion-inner-text > .promotion-end-time {
+  opacity: 1;
+}
+//-------------------------promotion-view-all-----------------------
+.promotion-view-all {
+  height: 45px;
+  width: 200px;
+  padding: 12px 20px;
+  background-color: $main-green-light;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    position: absolute;
+    z-index: 2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    right: 0px;
+    background-color: $main-green;
+    transform: translateX(-100%);
+    transition: 0.2s ease-in-out;
+  }
+  &:hover::before {
+    transform: translateX(-5%);
+  }
+}

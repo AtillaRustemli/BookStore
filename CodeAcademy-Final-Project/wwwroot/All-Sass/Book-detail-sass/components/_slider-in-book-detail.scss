@@ -1,0 +1,140 @@
+.scroller-in-book-detail {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 35px;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      border: 0.5px solid #53565a44;
+      width: 100%;
+    }
+    h2 {
+      font-size: 24px;
+      color: $font-color;
+      font-weight: 600;
+      &:hover a {
+        color: $main-green-light;
+      }
+    }
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 70px;
+      height: 30px;
+      border: 1px solid $main-green-light;
+      p {
+        position: absolute;
+        z-index: 2;
+        color: $main-green-light;
+        transition: 0.2s linear;
+        font-weight: 600;
+      }
+      &:hover p {
+        color: white;
+      }
+      @include Btn-hover-animation-flexable($main-green-light);
+    }
+  }
+  .slick-list {
+    width: 100%;
+  }
+  .scroller-book {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 10px;
+    padding: 0px 30px;
+    position: relative;
+    .priv-arrow {
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      width: 50px;
+      height: 50px;
+      color: black;
+    }
+    .next-arrow {
+      cursor: pointer;
+      position: absolute;
+      right: -50px;
+      width: 50px;
+      height: 50px;
+      color: black;
+    }
+  }
+  .scroller-book-child {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    .slider-child-image {
+      a {
+        width: 100%;
+        display: inline-block;
+        img {
+          width: 100%;
+          transition: 0.3s linear;
+        }
+        &:hover img {
+          box-shadow: 4px 2px 20px;
+        }
+      }
+    }
+  }
+  .slider-child-info {
+    display: flex;
+    flex-direction: column;
+    &-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #414042;
+      h4 {
+        width: 100%;
+        text-align: center;
+      }
+      p {
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+
+    .payment {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 25px;
+        background-color: $mainblue-light;
+        color: white;
+        position: relative;
+        p {
+          font-size: 14px;
+          position: absolute;
+          z-index: 2;
+
+          @include myMedia(725px) {
+            font-size: 10px;
+          }
+          @include myMedia(600px) {
+            font-size: 8px;
+          }
+        }
+        @include Btn-hover-animation-flexable($mainblue-dark);
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.popular-categories-in-books-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 15px;
+  li {
+    width: calc(100% / 4 - 20px);
+    background-color: $bg-gray;
+    @include myMedia(850px) {
+      width: calc(100% / 2 - 20px);
+    }
+    .popular-categories-in-books-list-images {
+      a {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        overflow: hidden;
+        padding: 30px 10px 10px;
+      }
+      img {
+        width: calc(100% / 3.5);
+        transform: translateY(5%);
+        transition: 0.3s linear;
+      }
+      .center-image {
+        position: absolute;
+        z-index: 2;
+        margin: 0px auto;
+        transform: translateX(0);
+      }
+    }
+    .category-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 55px;
+      h2 {
+        font-size: 17px;
+        font-weight: 600;
+      }
+    }
+    &:hover .center-image {
+      scale: 1.1;
+    }
+    &:hover a img:nth-child(1) {
+      transform: translateX(10px) translateY(5%);
+    }
+    &:hover a img:nth-child(3) {
+      transform: translateX(-10px) translateY(5%);
+    }
+  }
+}

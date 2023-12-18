@@ -8,5 +8,9 @@ namespace CodeAcademy_Final_Project.Controllers
         {
             return View();
         }
+        public IActionResult Detail()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,12 @@
+@import "./variables";
+@import "../utilities/mixins";
+@import "../utilities/shablons";
+@import "./reset";
+@import "./base";
+@import "../layout/header";
+@import "../layout/header-navPart";
+@import "../layout/header-in-scroll";
+@import "../layout/drawer";
+@import "../layout/footer";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap");

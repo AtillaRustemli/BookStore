@@ -1,6 +1,6 @@
 ﻿namespace CodeAcademy_Final_Project.Models
 {
-    public class Genre
+    public class Genre:BaseEntity
     {
     }
 }

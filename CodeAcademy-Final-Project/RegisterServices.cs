@@ -12,6 +12,7 @@ namespace CodeAcademy_Final_Project
             {
                 opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
+            services.AddHttpContextAccessor();
         }
     }
 }

@@ -1,0 +1,400 @@
+.result-for-author {
+  & .title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #1f2a37;
+    padding: 15px;
+    @include myMedia(580px) {
+      font-size: 22px;
+      text-align: center;
+    }
+    @include myMedia(450px) {
+      font-size: 18px;
+    }
+  }
+  .author-inner {
+    color: #53565a;
+    position: relative;
+    display: flex;
+    @include myMedia(500px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &-left {
+      width: 25%;
+      background-color: #f4f4f4;
+      padding: 5px;
+      position: relative;
+      @include myMedia(800px) {
+        top: 0px;
+        left: 0px;
+        height: 80%;
+      }
+      @include myMedia(500px) {
+        width: 90%;
+        margin-bottom: 10px;
+      }
+      .refine {
+        @include myMedia(500px) {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          & > div {
+            width: 70%;
+          }
+        }
+        & > div {
+          margin-bottom: 10px;
+        }
+      }
+      .refine-open-btn {
+        cursor: pointer;
+        display: none;
+        @include myMedia(500px) {
+          display: flex;
+        }
+      }
+
+      .refine-cancel-btn {
+        display: none;
+        cursor: pointer;
+      }
+      .top {
+        padding: 15px 15px 18px 8px;
+        font-weight: 500;
+        font-size: 17px;
+        display: flex;
+        justify-content: space-between;
+        @include myMedia(950px) {
+          font-size: 14px;
+          padding-right: 5px;
+        }
+        @include myMedia(730px) {
+          font-size: 12px;
+        }
+        @include myMedia(700px) {
+          font-size: 10px;
+        }
+        @include myMedia(520px) {
+          font-size: 9px;
+        }
+        @include myMedia(500px) {
+          font-size: 17px;
+          text-align: center;
+        }
+      }
+      .category-refine,
+      .price-refine,
+      .language-refine {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        .refine-title {
+          color: #53555a;
+          padding: 15px 15px 18px 8px;
+          font-weight: 600;
+          @include myMedia(950px) {
+            font-size: 14px;
+          }
+          @include myMedia(500px) {
+            padding: 5px 5px 6px 8px;
+          }
+        }
+        form div {
+          padding-bottom: 10px;
+        }
+        .refine-child-list {
+          display: flex;
+          flex-direction: column;
+          padding: 0px 8px 10px;
+          font-size: 13px;
+          font-weight: 500;
+          row-gap: 2px;
+          @include myMedia(950px) {
+            font-size: 10px;
+          }
+          li {
+            padding: 8px;
+            cursor: pointer;
+            label {
+              cursor: pointer;
+            }
+            input {
+              cursor: pointer;
+            }
+            @include myMedia(500px) {
+              padding: 4px;
+            }
+            &:hover {
+              border: 2px solid #d0d0d0;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+      .language-refine {
+        form {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+        select {
+          @include myMedia(500px) {
+            width: 100%;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    &-right {
+      width: 75%;
+      @include myMedia(500px) {
+        width: 90%;
+      }
+      .book-type {
+        display: flex;
+        width: 100%;
+        padding: 5px 20px 0px;
+        background-color: #f5f5f5;
+        li {
+          padding: 10px 15px 5px;
+          text-align: center;
+          span {
+            font-size: 12px;
+          }
+          .type {
+            font-size: 14px;
+            color: $main-green-light;
+            font-weight: 600;
+          }
+        }
+      }
+      .book-sort-by {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        .title-sort-by {
+          color: #1f2a37;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .sort-by {
+          background-color: #f5f5f5;
+          width: 60%;
+          border: 1px solid #8787875e;
+          border-radius: 5px;
+          font-size: 14px;
+          display: flex;
+          overflow: hidden;
+          @include myMedia(410px) {
+            flex-direction: column;
+            width: 40%;
+          }
+          a {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            padding: 6px 4px;
+            &:hover {
+              background-color: $main-green-light;
+              color: white;
+            }
+            @include myMedia(900px) {
+              font-size: 12px;
+            }
+            @include myMedia(670px) {
+              font-size: 10px;
+            }
+            @include myMedia(410px) {
+              width: 100%;
+            }
+          }
+          #first-one {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              height: 100%;
+              border: 1px solid #8787875e;
+              @include myMedia(410px) {
+                height: 0px;
+                width: 100%;
+                bottom: 0px;
+                top: 100%;
+              }
+            }
+          }
+        }
+      }
+      .book-in-author {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        padding: 12px;
+        @include myMedia(380px) {
+          justify-content: center;
+        }
+        li {
+          width: 25%;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          row-gap: 5px;
+          position: relative;
+          &:hover .checkout {
+            opacity: 1 !important;
+          }
+          @include myMedia(900px) {
+            width: calc(100% / 3);
+          }
+          @include myMedia(660px) {
+            width: calc(100% / 2);
+          }
+          @include myMedia(380px) {
+            width: 75%;
+            &::after {
+              display: none;
+            }
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            height: 85%;
+            border: 1.5px solid rgba(199, 199, 199, 0.461);
+            align-self: center;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            width: 80%;
+            border: 1.5px solid rgba(199, 199, 199, 0.461);
+            align-self: center;
+          }
+          .img-of-book-in-author {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 265px;
+            @include myMedia(1200px) {
+              height: 200px;
+            }
+            @include myMedia(660px) {
+              height: auto;
+              margin-bottom: 20px;
+            }
+            a {
+              width: 70%;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .inner-description {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            row-gap: 10px;
+            .book-name {
+              font-size: 14px;
+              font-weight: 600;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-bottom: 2px dashed #b1b1b1;
+              padding-bottom: 10px;
+            }
+            .author-name {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-bottom: 2px dashed #b1b1b1;
+              padding-bottom: 10px;
+              color: $main-green-light;
+              font-size: 14px;
+              text-decoration: underline;
+              text-underline-offset: 4px;
+              margin-bottom: -10px;
+            }
+            .book-type {
+              display: flex;
+              justify-content: center;
+              background-color: inherit;
+              border-bottom: 2px dashed #b1b1b1;
+              padding-bottom: 10px;
+            }
+          }
+          .checkout {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            transition: 0.2s linear;
+            opacity: 0;
+
+            & > p {
+              font-weight: 600;
+              padding: 10px;
+              font-size: 22px;
+            }
+            & > div {
+              display: flex;
+              justify-content: space-between;
+            }
+            a {
+              height: 30px;
+              width: 70%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              background-color: $mainblue-light;
+              font-size: 14px;
+              font-weight: 600;
+              position: relative;
+              p {
+                position: absolute;
+                z-index: 2;
+                width: 90%;
+                display: flex;
+                justify-content: space-evenly;
+              }
+              @include Btn-hover-animation-flexable($mainblue-dark);
+            }
+            .wish-list {
+              width: 20%;
+              background-color: inherit;
+              border: 1px solid #888888;
+              color: #888888;
+              font-size: 17px;
+              font-weight: 700;
+              @include Btn-hover-animation-flexable($main-green);
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .active-refine {
+    border: 2px solid #d0d0d0;
+    border-radius: 5px;
+    font-weight: 600 !important;
+  }
+  .active-book-type {
+    background-color: white;
+  }
+}
