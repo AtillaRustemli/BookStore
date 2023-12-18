@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fAGvKUyu5wmPuOnN7aUxXERzXjdLCwlsRI3Kxhun5MESI6BGta9RAjvj61sOdns6KB8uvBsMk6QDmHWZdmjCBw==",
+  "dgSpecHash": "D3m9DST0Qfi4Rzp+WyrmMiYxX6Wg9k7xi5DF6efvjrAcCPpYHxKjl7dia+jF6KVzGPLMnbUF8MGV2hHe6UsHuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MSI\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
