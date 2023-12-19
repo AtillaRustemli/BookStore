@@ -1,8 +1,8 @@
 ﻿namespace CodeAcademy_Final_Project.Models
 {
-    public class Category:BaseEntity
+    public class Type:BaseEntity
     {
         public string Name { get; set; }
-        public List<Book> Book { get; set; }
+        public List<BookType> BookType { get; set; }
     }
 }

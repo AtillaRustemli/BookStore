@@ -17,6 +17,10 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired();
             builder.Property(c => c.LanguageId)
                 .IsRequired();
+            builder.Property(c => c.CategoryId)
+                .IsRequired();
+            builder.Property(c => c.LanguageId)
+                .IsRequired();
             builder.Property(c=>c.ImgUrl) 
                 .IsRequired();
         }

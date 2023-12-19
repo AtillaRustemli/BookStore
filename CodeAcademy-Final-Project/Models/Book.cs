@@ -10,5 +10,9 @@
         public List<BookGenre> BookGenre { get; set; }
         public int LanguageId { get; set; }
         public Language Language { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public List<BookType> BookType { get; set; }
+
     }
 }

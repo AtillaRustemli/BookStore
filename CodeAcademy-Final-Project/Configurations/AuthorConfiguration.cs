@@ -11,6 +11,9 @@ namespace CodeAcademy_Final_Project.Configurations
             builder.Property(c => c.Name)
              .IsRequired()
              .HasMaxLength(60);
+            builder.HasData(
+                new {Name="Mir Celal"}
+                );
         }
     }
 }
