@@ -13,6 +13,8 @@
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public List<BookType> BookType { get; set; }
+        public int PromotionId { get; set; }
+        public Promotion Promotion { get; set; }
 
     }
 }

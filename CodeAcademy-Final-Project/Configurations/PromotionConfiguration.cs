@@ -4,18 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CodeAcademy_Final_Project.Configurations
 {
-    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public class PromotionConfiguration : IEntityTypeConfiguration<Promotion>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<Promotion> builder)
         {
             builder.Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(60);
-            builder.HasData(
-                new {Name="BestSeller"}
-                );
-
+            builder.Property(p => p.ImgUrl)
+                .IsRequired();
         }
-
     }
 }
