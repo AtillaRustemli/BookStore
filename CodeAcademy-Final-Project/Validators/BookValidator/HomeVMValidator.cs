@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CodeAcademy_Final_Project.Validators.BookValidator
 {
-    public class HomeVMValidator: AbstractValidator<HomeVM>
+    public class HomeVMValidator: AbstractValidator<BookHomeVM>
     {
         public HomeVMValidator()
         {

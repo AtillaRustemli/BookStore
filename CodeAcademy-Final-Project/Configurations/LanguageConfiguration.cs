@@ -11,8 +11,8 @@ namespace CodeAcademy_Final_Project.Configurations
             builder.Property(p => p.Name)
                 .IsRequired();
             builder.HasData(
-                new { Name = "Azerbaijany" },
-                new { Name = "English" }
+                new Language { Id=1, Name = "Azerbaijany" },
+                new Language { Id=2, Name = "English" }
 
                 );
         }

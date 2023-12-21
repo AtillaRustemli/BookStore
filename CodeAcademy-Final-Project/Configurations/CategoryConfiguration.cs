@@ -12,7 +12,7 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired()
                 .HasMaxLength(60);
             builder.HasData(
-                new {Name="BestSeller"}
+                new Category { Id=1,Name="BestSeller"}
                 );
 
         }

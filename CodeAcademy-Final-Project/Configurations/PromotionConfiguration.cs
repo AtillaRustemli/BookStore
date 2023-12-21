@@ -13,6 +13,20 @@ namespace CodeAcademy_Final_Project.Configurations
                 .HasMaxLength(60);
             builder.Property(p => p.ImgUrl)
                 .IsRequired();
+            builder.Property(p=>p.DetailImageUrl)
+                .IsRequired();
+            builder.HasData(
+                new Promotion
+                {
+                    Id=1,
+                    Name="New Year Discount",
+                    Title="Amasing new year discount",
+                    Description="Look at our fantasting promotion.This is amasing!!!",
+                    ImgUrl= "promotion-image1.jpg",
+                    DetailImageUrl= "promotion-detail1.jpg"
+                }
+                );
+
         }
     }
 }

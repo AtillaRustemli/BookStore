@@ -12,6 +12,15 @@ namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
                 .IsRequired();
             builder.Property(p => p.GenreId)
                 .IsRequired();
+            builder.HasData(
+                new BookGenre
+                {
+                    Id = 1,
+                    GenreId = 1,
+                    BookId = 1
+                }
+
+                );
         }
     }
 }

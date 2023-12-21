@@ -229,6 +229,10 @@
       "PackagePath": "staticwebassets\\All-Sass\\slick-sass\\_slick.scss"
     },
     {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\Promotion-detail.css",
+      "PackagePath": "staticwebassets\\assets\\css\\Promotion-detail.css"
+    },
+    {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\author.css",
       "PackagePath": "staticwebassets\\assets\\css\\author.css"
     },
@@ -313,28 +317,28 @@
       "PackagePath": "staticwebassets\\images\\arrow-growth.png"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example.avif",
-      "PackagePath": "staticwebassets\\images\\book-example.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example.jpg"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example2.avif",
-      "PackagePath": "staticwebassets\\images\\book-example2.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example2.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example2.jpg"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example3.avif",
-      "PackagePath": "staticwebassets\\images\\book-example3.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example3.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example3.jpg"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example4.avif",
-      "PackagePath": "staticwebassets\\images\\book-example4.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example4.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example4.jpg"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example5.avif",
-      "PackagePath": "staticwebassets\\images\\book-example5.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example5.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example5.jpg"
     },
     {
-      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example6.avif",
-      "PackagePath": "staticwebassets\\images\\book-example6.avif"
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\book-example6.jpg",
+      "PackagePath": "staticwebassets\\images\\book-example6.jpg"
     },
     {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\facebook-like-header.png",
@@ -355,6 +359,10 @@
     {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\payment-method-stripe.png",
       "PackagePath": "staticwebassets\\images\\payment-method-stripe.png"
+    },
+    {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\promotion-detail1.jpg",
+      "PackagePath": "staticwebassets\\images\\promotion-detail1.jpg"
     },
     {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\promotion-image1.jpg",

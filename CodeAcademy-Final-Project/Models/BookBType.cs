@@ -1,10 +1,10 @@
 ﻿namespace CodeAcademy_Final_Project.Models
 {
-    public class BookType:BaseEntity
+    public class BookBType:BaseEntity
     {
         public int BookId { get; set; }
         public Book Book { get; set; }
-        public int TypeId { get; set; }
-        public Type Type { get; set; }
+        public int BTypeId { get; set; }
+        public BType BType { get; set; }
     }
 }

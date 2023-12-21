@@ -14,7 +14,7 @@ namespace CodeAcademy_Final_Project.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            HomeVM vm = new();
+            BookHomeVM vm = new();
             return View(await Task.FromResult(vm));
         }
     }
