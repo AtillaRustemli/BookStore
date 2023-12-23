@@ -18,6 +18,8 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<BType> BTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<SettingKeyValue> SettingKeyValue { get; set; }
         public override int SaveChanges()
         {
             var datas = ChangeTracker.Entries<BaseEntity>();

@@ -1,5 +1,5 @@
 ﻿using CodeAcademy_Final_Project.DAL;
-using CodeAcademy_Final_Project.ViewModels;
+using CodeAcademy_Final_Project.ViewModels.BookViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeAcademy_Final_Project.ViewComponents

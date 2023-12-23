@@ -35,6 +35,7 @@ namespace CodeAcademy_Final_Project.Configurations
                     CategoryId=1,
                     PromotionId=1,
                     ImgUrl="book-example4.jpg"
+                    
                 }
                 );
         }

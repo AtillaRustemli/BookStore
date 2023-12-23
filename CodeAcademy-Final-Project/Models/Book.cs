@@ -7,6 +7,7 @@
         public DateTime Released { get; set; }
         public double Price { get; set; }
         public long? PopularityCount { get; set; }
+        public long? SellCount { get; set; }
         public string ImgUrl { get; set; }
         public List<AuthorBook> AuthorBook { get; set; }
         public List<BookGenre> BookGenre { get; set; }

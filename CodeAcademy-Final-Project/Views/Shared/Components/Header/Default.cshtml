@@ -1,9 +1,11 @@
-﻿<header>
+﻿@model LayoutHeaderVM
+
+<header>
     <div class="header-top">
         <div class="container">
             <div class="content">
                 <div class="header-top-left location">
-                    <a href="#">
+                    <a  >
                         <span>
                             <i class="fa-solid fa-location-dot"
                                style="color: #ffffff"></i>
@@ -12,23 +14,13 @@
                     </a>
                 </div>
                 <div class="header-top-left">
-                    <a href="#">
-                        <span>Track my order</span>
-                    </a>
-                </div>
-                <div class="header-top-left">
-                    <a href="#">
-                        <span>Help centre</span>
-                    </a>
-                </div>
-                <div class="header-top-left">
-                    <a href="#">
-                        <span>+612 9045 4394</span>
+                    <a>
+                        <span>@Model.SettingKeyValue["Number"]</span>
                     </a>
                 </div>
                 <div class="facebook-like">
                     <a href="#">
-                        <img src="../images/facebook-like-header.png" alt="" />
+                        <img src="~/images/facebook-like-header.png" alt="" />
                     </a>
                 </div>
                 <div class="header-top-links">
@@ -53,9 +45,9 @@
     <div class="header-main-content">
         <div class="container">
             <div class="header-main-content-left">
-                <img class="logo" src="../images/header-logo.png" alt="" />
+                <img class="logo" src="~/images/header-logo.png" alt="" />
                 <a href="#"></a>
-                <img src="../images/header-logo-upper.svg"
+                <img src="~/images/header-logo-upper.svg"
                      class="header-logo-upper"
                      alt="" />
             </div>
@@ -88,7 +80,7 @@
             </button>
         </div>
         <ul class="nav-list">
-            <li><a href="#">Book</a></li>
+            <li><a asp-controller="bookhome" asp-action="index">Book</a></li>
             <li><a href="#">EBook</a></li>
             <li><a href="#">AudioBook</a></li>
             <li><a href="#">Promotions</a></li>

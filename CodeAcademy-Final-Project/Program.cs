@@ -11,7 +11,7 @@ var app = builder.Build();
 
 app.MapControllerRoute(
     "default",
-    "{controller=home}/{action=index}/{id?}"
+    "{controller=bookhome}/{action=index}/{id?}"
     );
 app.UseStaticFiles();
 app.UseAuthentication();

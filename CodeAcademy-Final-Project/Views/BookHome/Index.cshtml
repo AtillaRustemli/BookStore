@@ -1,0 +1,674 @@
+﻿@model BookHomeVM
+
+@{
+    ViewData["CssLink"] = " /assets/css/book.css";
+
+}
+      <section class="new-releases">
+        <div class="container">
+          <div class="new-releases-books">
+            @foreach (var book in Model.Books)
+            {
+            <div class="new-releases-books-item">
+                <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id">
+                    <img src="~/images/@book.ImgUrl" style="width:100%;" />
+              </a>
+              <div class="checkout-in-book">
+                <span class="value">$@book.Price</span>
+                <a href="#">
+                  <span class="checkout-icon"
+                    ><i class="fa-solid fa-cart-shopping"></i></span
+                ></a>
+              </div>
+            </div>
+
+                
+            }
+          </div>
+          <div class="new-releases-btn">
+            <button><a href="#">View All New Releases</a></button>
+          </div>
+        </div>
+      </section>
+      <section class="discover-more">
+        <div class="container">
+          <h2>Discover More</h2>
+          <ul class="discover-me-icon-list">
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-star" style="color: #ffffff"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-tag" style="color: #ffffff"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-brands fa-tiktok" style="color: #ffffff"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>
+                  <i
+                    class="fa-solid fa-arrow-up-wide-short"
+                    style="color: #ffffff"
+                  ></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-hashtag" style="color: #ffffff"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-gift" style="color: #ffffff"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="trending-now">
+        <div class="container">
+          <div class="trending-now-left">
+            <div class="first">
+              <h2>
+                <a href="#"> <span>Trendng</span> in Books</a>
+              </h2>
+
+              <ul class="trending-now-books">
+                <li id="trending-now-first-child">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example2.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="##">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="##" class="trending-now-book-link">
+                    <img src="~/images/book-example2.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="##">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <div class="trending-now-left-bottom-link">
+                <a href="#"
+                  >See all New releases <i class="fa-solid fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="second">
+              <h2>
+                <a href="#"> <span>Hot Pre-Orders</span> in Books</a>
+              </h2>
+
+              <ul class="trending-now-books">
+                <li id="trending-now-first-child">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example2.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="##">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example3.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="trending-now-center-book">
+                  <a href="##" class="trending-now-book-link">
+                    <img src="~/images/book-example2.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="#">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="trending-now-book-link">
+                    <img src="~/images/book-example.jpg" alt="" />
+                  </a>
+                  <div class="checkout-in-trending-now">
+                    <span>$25</span>
+                    <a href="##">
+                      <span class="checkout-icon"
+                        ><i
+                          class="fa-solid fa-cart-shopping"
+                          style="color: #ffffff"
+                        ></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <div class="trending-now-left-bottom-link">
+                <a href="#"
+                  >View all Hot-Pre Orders
+                  <i class="fa-solid fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="trending-now-form">
+              <h2 class="trending-now-form-title">Search for TextBook</h2>
+              <form>
+                <input type="text" placeholder="Search by textbook name" />
+                <div class="trending-now-form-radios">
+                  <input type="radio" name="group-trending-now" id="Textbook" />
+                  <label for="Textbook">Textbook</label>
+                  <input type="radio" name="group-trending-now" id="eText" />
+                  <label for="eText">eText</label>
+                </div>
+
+                <button type="submit">
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    style="color: #ffffff"
+                  ></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="trending-now-right">
+            <div class="trending-now-right-title">Best Selling Books</div>
+            <ol type="1" class="best-sellers">
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="~/images/book-example.jpg" alt="" />
+                </a>
+                <div>
+                  <h4>
+                    <a href="#">Book Name</a>
+                  </h4>
+                  <p>By AuthorName</p>
+                </div>
+              </li>
+            </ol>
+            <a href="#" class="view-all-best-sellers">View All</a>
+          </div>
+        </div>
+      </section>
+      <section class="popular-categories-in-books">
+        <div class="container">
+          <ul class="popular-categories-in-books-list">
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="popular-categories-in-books-list-images">
+                <a href="#">
+                  <img src="~/images/book-example4.jpg" alt="" />
+                  <img
+                    class="center-image"
+                    src="~/images/book-example5.jpg"
+                    alt=""
+                  />
+                  <img src="~/images/book-example6.jpg" alt="" />
+                </a>
+              </div>
+              <div class="category-name">
+                <a href="#">
+                  <h2>Fiction</h2>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="promotions">
+        <div class="container">
+          <h2>Promotions</h2>
+          <div class="promotions-inner">
+            <div class="promotions-inner-item">
+              <a href="#">
+                <img
+                  class="promotion-image"
+                  src="~/images/promotion-image1.jpg"
+                  alt=""
+                />
+
+                <div class="promotion-inner-text">
+                  <h4>This is a title</h4>
+                  <p>This is a description</p>
+                  <div class="promotion-hover">
+                    <p>
+                      This description comes when you hover in the promotion
+                    </p>
+                  </div>
+
+                  <div class="promotion-end-time">
+                    <p>23:59 31st december</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="promotions-inner-item">
+              <a href="#">
+                <img
+                  class="promotion-image"
+                  src="~/images/promotion-image1.jpg"
+                  alt=""
+                />
+
+                <div class="promotion-inner-text">
+                  <h4>This is a title</h4>
+                  <p>This is a description</p>
+                  <div class="promotion-hover">
+                    <p>
+                      This description comes when you hover in the promotion
+                    </p>
+                  </div>
+
+                  <div class="promotion-end-time">
+                    <p>23:59 31st december</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="promotions-inner-item">
+              <a href="#">
+                <img
+                  class="promotion-image"
+                  src="~/images/promotion-image1.jpg"
+                  alt=""
+                />
+
+                <div class="promotion-inner-text">
+                  <h4>This is a title</h4>
+                  <p>This is a description</p>
+                  <div class="promotion-hover">
+                    <p>
+                      This description comes when you hover in the promotion
+                    </p>
+                  </div>
+
+                  <div class="promotion-end-time">
+                    <p>23:59 31st december</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a class="promotion-view-all" href="##"><p>View All Promotions</p></a>
+        </div>
+      </section>

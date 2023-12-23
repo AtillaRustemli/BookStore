@@ -16,12 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Home/Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWwuY3NodG1s
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Shared/Components/Footer/Default.cshtml]

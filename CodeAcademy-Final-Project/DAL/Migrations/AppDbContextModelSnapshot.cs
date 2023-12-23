@@ -141,6 +141,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<DateTime>("Released")
                         .HasColumnType("datetime2");
 
+                    b.Property<long?>("SellCount")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -165,7 +168,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Name = "Talk to the Heart",
                             Price = 1.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 21, 21, 38, 4, 658, DateTimeKind.Local).AddTicks(1089)
+                            Released = new DateTime(2023, 12, 23, 21, 54, 25, 549, DateTimeKind.Local).AddTicks(1944)
                         });
                 });
 
@@ -450,6 +453,84 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.SettingKeyValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SettingKeyValue");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Key = "Number",
+                            Value = "+612 9045 4394"
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pinterest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedias");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Facebook = "https://www.facebook.com/",
+                            Pinterest = "https://www.pinterest.com/",
+                            Twitter = "https://twitter.com/"
                         });
                 });
 
