@@ -10,9 +10,15 @@ namespace CodeAcademy_Final_Project.Configurations
         {
             builder.Property(c => c.Name)
                 .IsRequired()
-                .HasMaxLength(60); 
+                .HasMaxLength(60);
+            builder.Property(g => g.CategoryId)
+                .IsRequired();
             builder.HasData(
-                new Genre { Id=1, Name="Fanatsy" }
+                new Genre {
+                    Id=1,
+                    Name="Fanatsy",
+                    CategoryId=1
+                }
                 );
 
         }

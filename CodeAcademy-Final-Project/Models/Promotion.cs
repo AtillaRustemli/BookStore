@@ -7,6 +7,7 @@
         public string Description { get; set; }
         public string ImgUrl { get; set; }
         public string DetailImageUrl { get; set; }
+        public DateTime EndTime { get; set; }
         public List<Book> Books { get; set; }
     }
 }

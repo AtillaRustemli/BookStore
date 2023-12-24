@@ -23,7 +23,8 @@ namespace CodeAcademy_Final_Project.Configurations
                     Title="Amasing new year discount",
                     Description="Look at our fantasting promotion.This is amasing!!!",
                     ImgUrl= "promotion-image1.jpg",
-                    DetailImageUrl= "promotion-detail1.jpg"
+                    DetailImageUrl= "promotion-detail1.jpg",
+                    EndTime= DateTime.Now
                 }
                 );
 

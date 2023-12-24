@@ -1,4 +1,4 @@
-﻿
+﻿@model Book
 
 @{
     ViewData["CssLink"] = " /assets/css/book-detail.css";
@@ -66,7 +66,7 @@
 <section class="book-product">
     <div class="container">
         <div class="book-product-image">
-            <img src="~/images/book-example2.jpg" alt="" />
+            <img src="~/images/@Model.ImgUrl" alt="" />
         </div>
         <div class="book-product-info">
             <div class="book-product-info-left">
@@ -88,13 +88,17 @@
                     </div>
                 </div>
                 <div class="book-description">
-                    <h2 class="title">Good Influence</h2>
+                    <h2 class="title">@Model.Name</h2>
                     <p class="description">
-                        Motivate yourself to get fit, find purpose & improve your life
-                        with the next bestselling fitness, diet & nutrition personal
-                        training expert for fans of James Smith & Ant Middleton
+                        @Model.Description
                     </p>
-                    <p class="author-name">By : <a href="#">AuthorName</a></p>
+                    <p class="author-name">By : 
+                        <a href="#">
+                        @foreach (var author in Model.AuthorBook.Where(ab=>ab.BookId==Model.Id))
+                            {
+                                @(author.Author.Name+",")
+                            }
+                            </a></p>
                 </div>
                 <div class="about-book">
                     <h4>About-Book</h4>
@@ -114,7 +118,7 @@
                             </div>
                         </div>
                         <div class="book-detail">
-                            <p><span>Published :</span> 29th november 2019</p>
+                            <p><span>Published :</span> @Model.Released.ToString("dd MMMM yyyy")</p>
                         </div>
                     </div>
                     <hr />

@@ -4,6 +4,7 @@ using CodeAcademy_Final_Project.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeAcademy_Final_Project.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231224174558_addedReletionBetweenGnenreAndCategory")]
+    partial class addedReletionBetweenGnenreAndCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,7 +165,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 24, 23, 52, 2, 260, DateTimeKind.Local).AddTicks(61),
+                            Released = new DateTime(2023, 12, 24, 21, 45, 57, 556, DateTimeKind.Local).AddTicks(9470),
                             SellCount = 0L
                         });
                 });
@@ -466,9 +468,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("ImgUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -495,7 +494,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2023, 12, 24, 23, 52, 2, 260, DateTimeKind.Local).AddTicks(703),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"

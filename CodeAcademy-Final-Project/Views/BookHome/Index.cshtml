@@ -2,12 +2,12 @@
 
 @{
     ViewData["CssLink"] = " /assets/css/book.css";
-
+    int count = 0;
 }
       <section class="new-releases">
         <div class="container">
-          <div class="new-releases-books">
-            @foreach (var book in Model.Books)
+          <div class="new-releases-books" style="display:flex;justify-content:space-between;">
+            @foreach (var book in Model.Books.Where(b => b.BookType.Any(bt => bt.BTypeId == 1)))
             {
             <div class="new-releases-books-item">
                 <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id">
@@ -87,107 +87,35 @@
           <div class="trending-now-left">
             <div class="first">
               <h2>
-                <a href="#"> <span>Trendng</span> in Books</a>
+                <a href="#"> <span>Trending</span> in Books</a>
               </h2>
 
               <ul class="trending-now-books">
-                <li id="trending-now-first-child">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example2.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="##">
-                      <span class="checkout-icon"
-                        ><i
+                    @foreach (var book in Model.Books.Where(b => b.Released >= DateTime.Now.AddMonths(-3)).Take(6).OrderByDescending(b => b.Id))
+                    {
+                        count++;
+                        <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book  ")>
+                           
+                           <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" class="trending-now-book-link">
+                          <img src="~/images/@book.ImgUrl" alt="" />
+                          </a>
+                          <div class="checkout-in-trending-now">
+                            <span>$@book.Price</span>
+                          <a href="##">
+                          <span class="checkout-icon"
+                           ><i
                           class="fa-solid fa-cart-shopping"
                           style="color: #ffffff"
-                        ></i
+                           ></i
                       ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="##" class="trending-now-book-link">
-                    <img src="~/images/book-example2.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-
-                <li>
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="##">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
+                          </a>
+                          </div>
+                       </li>
+                        
+                    }
+                    @{
+                        count = 0;
+                    }
               </ul>
               <div class="trending-now-left-bottom-link">
                 <a href="#"
@@ -201,103 +129,29 @@
               </h2>
 
               <ul class="trending-now-books">
-                <li id="trending-now-first-child">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example2.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="##">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example3.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="trending-now-center-book">
-                  <a href="##" class="trending-now-book-link">
-                    <img src="~/images/book-example2.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="#">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
+                    @foreach (var book in Model.Books.Where(b => b.BookCategory.Any(bc=>bc.CategoryId==2)).Take(6).OrderByDescending(b => b.Id))
+                    {
+                        count++;
+                        <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
 
-                <li>
-                  <a href="#" class="trending-now-book-link">
-                    <img src="~/images/book-example.jpg" alt="" />
-                  </a>
-                  <div class="checkout-in-trending-now">
-                    <span>$25</span>
-                    <a href="##">
-                      <span class="checkout-icon"
-                        ><i
-                          class="fa-solid fa-cart-shopping"
-                          style="color: #ffffff"
-                        ></i
-                      ></span>
-                    </a>
-                  </div>
-                </li>
+                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" class="trending-now-book-link">
+                                <img src="~/images/@book.ImgUrl" alt="" />
+                            </a>
+                            <div class="checkout-in-trending-now">
+                                <span>$@book.Price</span>
+                                <a href="##">
+                                    <span class="checkout-icon">
+                                        <i class="fa-solid fa-cart-shopping"
+                                           style="color: #ffffff"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+
+                    }
+                    @{
+                        count = 0;
+                    }
               </ul>
               <div class="trending-now-left-bottom-link">
                 <a href="#"
@@ -330,116 +184,25 @@
           <div class="trending-now-right">
             <div class="trending-now-right-title">Best Selling Books</div>
             <ol type="1" class="best-sellers">
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
+                @foreach(var book in Model.Books.Take(10).OrderByDescending(b => b.PopularityCount))
+                {
+                <li>
+                <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id">
+                  <img src="~/images/@book.ImgUrl" alt="" />
                 </a>
                 <div>
                   <h4>
-                    <a href="#">Book Name</a>
+                    <a href="#">@book.Name</a>
                   </h4>
-                  <p>By AuthorName</p>
+                            <p>By @foreach(var author in book.AuthorBook.Where(ab => ab.BookId == book.Id))
+                                {
+                                    @author.Author.Name
+                                }
+                            </p>
                 </div>
               </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="~/images/book-example.jpg" alt="" />
-                </a>
-                <div>
-                  <h4>
-                    <a href="#">Book Name</a>
-                  </h4>
-                  <p>By AuthorName</p>
-                </div>
-              </li>
+                    
+                }
             </ol>
             <a href="#" class="view-all-best-sellers">View All</a>
           </div>
@@ -448,150 +211,29 @@
       <section class="popular-categories-in-books">
         <div class="container">
           <ul class="popular-categories-in-books-list">
+            @foreach(var category in Model.Categories)
+            {
             <li>
               <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
+                <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
+                    @foreach (var book in category.BookCategory.Take(3))
+                     {
+                         count++;
+                         <img src="~/images/@book.Book.ImgUrl" class="@(count==2?"center-image":"")" alt="" />
+
+                     }
+                     @{
+                       count = 0;
+                     }
                 </a>
               </div>
               <div class="category-name">
                 <a href="#">
-                  <h2>Fiction</h2>
+                  <h2>@category.Name</h2>
                 </a>
               </div>
             </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="popular-categories-in-books-list-images">
-                <a href="#">
-                  <img src="~/images/book-example4.jpg" alt="" />
-                  <img
-                    class="center-image"
-                    src="~/images/book-example5.jpg"
-                    alt=""
-                  />
-                  <img src="~/images/book-example6.jpg" alt="" />
-                </a>
-              </div>
-              <div class="category-name">
-                <a href="#">
-                  <h2>Fiction</h2>
-                </a>
-              </div>
-            </li>
+            }
           </ul>
         </div>
       </section>
@@ -599,8 +241,10 @@
         <div class="container">
           <h2>Promotions</h2>
           <div class="promotions-inner">
-            <div class="promotions-inner-item">
-              <a href="#">
+            @foreach (var promotions in Model.Promotions)
+            {
+                  <div class="promotions-inner-item">
+              <a asp-controller="promotions" asp-action="detail" asp-route-id="@promotions.Id">
                 <img
                   class="promotion-image"
                   src="~/images/promotion-image1.jpg"
@@ -608,67 +252,32 @@
                 />
 
                 <div class="promotion-inner-text">
-                  <h4>This is a title</h4>
-                  <p>This is a description</p>
+                  <h4>@promotions.Title</h4>
+                            <p>@if (promotions.Description.Length >= 40) 
+                                {
+                                    @(promotions.Description.Substring(0,40)+"...")
+                                }
+                                else
+                                {
+                                    @promotions.Description
+                                }
+                            </p>
                   <div class="promotion-hover">
                     <p>
-                      This description comes when you hover in the promotion
+                     @promotions.Description
                     </p>
                   </div>
 
                   <div class="promotion-end-time">
-                    <p>23:59 31st december</p>
+                                <p>@promotions.EndTime.ToString("HH:mm dddd, dd MMMM")</p>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="promotions-inner-item">
-              <a href="#">
-                <img
-                  class="promotion-image"
-                  src="~/images/promotion-image1.jpg"
-                  alt=""
-                />
-
-                <div class="promotion-inner-text">
-                  <h4>This is a title</h4>
-                  <p>This is a description</p>
-                  <div class="promotion-hover">
-                    <p>
-                      This description comes when you hover in the promotion
-                    </p>
-                  </div>
-
-                  <div class="promotion-end-time">
-                    <p>23:59 31st december</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="promotions-inner-item">
-              <a href="#">
-                <img
-                  class="promotion-image"
-                  src="~/images/promotion-image1.jpg"
-                  alt=""
-                />
-
-                <div class="promotion-inner-text">
-                  <h4>This is a title</h4>
-                  <p>This is a description</p>
-                  <div class="promotion-hover">
-                    <p>
-                      This description comes when you hover in the promotion
-                    </p>
-                  </div>
-
-                  <div class="promotion-end-time">
-                    <p>23:59 31st december</p>
-                  </div>
-                </div>
-              </a>
-            </div>
+            }
+          
+         
           </div>
-          <a class="promotion-view-all" href="##"><p>View All Promotions</p></a>
+          <a class="promotion-view-all" asp-controller="promotions" asp-action="index"><p>View All Promotions</p></a>
         </div>
       </section>
