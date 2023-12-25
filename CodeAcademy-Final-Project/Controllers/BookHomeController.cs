@@ -14,7 +14,7 @@ namespace CodeAcademy_Final_Project.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string?type)
         {
             BookHomeVM vm = new();
             vm.Books=_context.Book
@@ -32,14 +32,18 @@ namespace CodeAcademy_Final_Project.Controllers
             
             return View(vm);
         }
-        public IActionResult Detail(int? id)
+        public IActionResult Detail(int? id,int?typeId=1)
         {
+            if (id == null) return NotFound();
             var book = _context.Book
                 .Include (b=>b.BookType)
                 .ThenInclude(bt=>bt.BType)
                 .Include(bt=>bt.AuthorBook)
                 .ThenInclude (bt=>bt.Author)
+                .Where(b=>b.BookType.Any(bt => bt.BTypeId == typeId))
                 .FirstOrDefault(b=>b.Id==id);
+            if(book == null) return NotFound();
+           
 
             return View(book);
         }
