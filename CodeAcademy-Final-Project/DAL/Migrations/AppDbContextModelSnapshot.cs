@@ -46,7 +46,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Author");
+                    b.ToTable("Author", (string)null);
 
                     b.HasData(
                         new
@@ -85,7 +85,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("AuthorBook");
+                    b.ToTable("AuthorBook", (string)null);
 
                     b.HasData(
                         new
@@ -150,7 +150,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("PromotionId");
 
-                    b.ToTable("Book");
+                    b.ToTable("Book", (string)null);
 
                     b.HasData(
                         new
@@ -197,7 +197,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("BookBType");
+                    b.ToTable("BookBType", (string)null);
 
                     b.HasData(
                         new
@@ -237,7 +237,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("BookCategory");
+                    b.ToTable("BookCategory", (string)null);
 
                     b.HasData(
                         new
@@ -277,7 +277,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("BookGenre");
+                    b.ToTable("BookGenre", (string)null);
 
                     b.HasData(
                         new
@@ -312,7 +312,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BTypes");
+                    b.ToTable("BTypes", (string)null);
 
                     b.HasData(
                         new
@@ -356,7 +356,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -395,7 +395,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Genre");
+                    b.ToTable("Genre", (string)null);
 
                     b.HasData(
                         new
@@ -429,7 +429,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Languages");
+                    b.ToTable("Languages", (string)null);
 
                     b.HasData(
                         new
@@ -487,7 +487,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Promotions");
+                    b.ToTable("Promotions", (string)null);
 
                     b.HasData(
                         new
@@ -529,7 +529,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SettingKeyValue");
+                    b.ToTable("SettingKeyValue", (string)null);
 
                     b.HasData(
                         new
@@ -568,7 +568,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SocialMedias");
+                    b.ToTable("SocialMedias", (string)null);
 
                     b.HasData(
                         new

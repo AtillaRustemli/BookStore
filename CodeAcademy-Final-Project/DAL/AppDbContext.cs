@@ -14,7 +14,6 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<AuthorBook> AuthorBook { get; set; }
         public DbSet<BookGenre> BookGenre { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
-        public DbSet<BookBType> BookBType { get; set; }
         public DbSet<BType> BTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Language> Languages { get; set; }

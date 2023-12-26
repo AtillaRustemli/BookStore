@@ -3,6 +3,6 @@
     public class BType:BaseEntity
     {
         public string Name { get; set; }
-        public List<BookBType> BookType { get; set; }
+        public List<Book> Book { get; set; }
     }
 }

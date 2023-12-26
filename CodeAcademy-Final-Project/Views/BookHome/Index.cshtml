@@ -7,7 +7,7 @@
       <section class="new-releases">
         <div class="container">
           <div class="new-releases-books" style="display:flex;justify-content:space-between;">
-            @foreach (var book in Model.Books.Where(b => b.BookType.Any(bt => bt.BTypeId == 1)))
+            @foreach (var book in Model.Books)
             {
             <div class="new-releases-books-item">
                 <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">

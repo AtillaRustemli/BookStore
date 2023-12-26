@@ -15,10 +15,11 @@
         public long? PopularityCount { get; set; }
         public long? SellCount { get; set; }
         public string ImgUrl { get; set; }
+        public int BTypeId { get; set; }
+        public BType BType { get; set; }
         public List<BookCategory> BookCategory { get; set; }
         public List<AuthorBook> AuthorBook { get; set; }
         public List<BookGenre> BookGenre { get; set; }
-        public List<BookBType> BookType { get; set; }
         public int LanguageId { get; set; }
         public Language Language { get; set; }
         public int PromotionId { get; set; }

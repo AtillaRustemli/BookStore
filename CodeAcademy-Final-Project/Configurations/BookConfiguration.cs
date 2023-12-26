@@ -33,7 +33,8 @@ namespace CodeAcademy_Final_Project.Configurations
                     PromotionId=1,
                     ImgUrl="book-example4.jpg",
                     SellCount = 0,
-                    PopularityCount = 0
+                    PopularityCount = 0,
+                    BTypeId=1
 
         }
                 );
