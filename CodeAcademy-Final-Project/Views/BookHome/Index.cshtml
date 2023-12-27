@@ -194,7 +194,7 @@
                   <h4>
                     <a href="#">@book.Name</a>
                   </h4>
-                            <p>By @foreach(var author in book.AuthorBook.Where(ab => ab.BookId == book.Id))
+                            <p>By : @foreach(var author in book.AuthorBook.Where(ab => ab.BookId == book.Id))
                                 {
                                     @author.Author.Name
                                 }

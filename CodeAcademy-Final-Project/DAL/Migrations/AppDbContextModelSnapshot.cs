@@ -46,7 +46,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Author", (string)null);
+                    b.ToTable("Author");
 
                     b.HasData(
                         new
@@ -85,7 +85,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("AuthorBook", (string)null);
+                    b.ToTable("AuthorBook");
 
                     b.HasData(
                         new
@@ -103,6 +103,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BTypeId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -146,16 +149,19 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BTypeId");
+
                     b.HasIndex("LanguageId");
 
                     b.HasIndex("PromotionId");
 
-                    b.ToTable("Book", (string)null);
+                    b.ToTable("Book");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            BTypeId = 1,
                             Description = "This is book's description and there is nothing but description so good luck)",
                             ImgUrl = "book-example4.jpg",
                             LanguageId = 1,
@@ -163,48 +169,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 24, 23, 52, 2, 260, DateTimeKind.Local).AddTicks(61),
+                            Released = new DateTime(2023, 12, 27, 23, 30, 44, 823, DateTimeKind.Local).AddTicks(6743),
                             SellCount = 0L
-                        });
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("BTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BTypeId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("BookBType", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BTypeId = 1,
-                            BookId = 1
                         });
                 });
 
@@ -237,7 +203,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("BookCategory", (string)null);
+                    b.ToTable("BookCategory");
 
                     b.HasData(
                         new
@@ -277,7 +243,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("BookGenre", (string)null);
+                    b.ToTable("BookGenre");
 
                     b.HasData(
                         new
@@ -312,7 +278,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BTypes", (string)null);
+                    b.ToTable("BTypes");
 
                     b.HasData(
                         new
@@ -356,7 +322,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -395,7 +361,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Genre", (string)null);
+                    b.ToTable("Genre");
 
                     b.HasData(
                         new
@@ -429,7 +395,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Languages", (string)null);
+                    b.ToTable("Languages");
 
                     b.HasData(
                         new
@@ -487,7 +453,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Promotions", (string)null);
+                    b.ToTable("Promotions");
 
                     b.HasData(
                         new
@@ -495,7 +461,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2023, 12, 24, 23, 52, 2, 260, DateTimeKind.Local).AddTicks(703),
+                            EndTime = new DateTime(2023, 12, 27, 23, 30, 44, 823, DateTimeKind.Local).AddTicks(7312),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -529,7 +495,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SettingKeyValue", (string)null);
+                    b.ToTable("SettingKeyValue");
 
                     b.HasData(
                         new
@@ -568,7 +534,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SocialMedias", (string)null);
+                    b.ToTable("SocialMedias");
 
                     b.HasData(
                         new
@@ -601,6 +567,12 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Book", b =>
                 {
+                    b.HasOne("CodeAcademy_Final_Project.Models.BType", "BType")
+                        .WithMany("Books")
+                        .HasForeignKey("BTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CodeAcademy_Final_Project.Models.Language", "Language")
                         .WithMany("Books")
                         .HasForeignKey("LanguageId")
@@ -613,28 +585,11 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("BType");
+
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBType", b =>
-                {
-                    b.HasOne("CodeAcademy_Final_Project.Models.BType", "BType")
-                        .WithMany("BookType")
-                        .HasForeignKey("BTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
-                        .WithMany("BookType")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BType");
-
-                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookCategory", b =>
@@ -698,13 +653,11 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Navigation("BookCategory");
 
                     b.Navigation("BookGenre");
-
-                    b.Navigation("BookType");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.BType", b =>
                 {
-                    b.Navigation("BookType");
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Category", b =>

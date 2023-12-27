@@ -21,6 +21,8 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired();
             builder.Property(c=>c.ImgUrl) 
                 .IsRequired();
+            builder.Property(c => c.BTypeId)
+                .IsRequired();
             builder.HasData(
                 new Book
                 {
