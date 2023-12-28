@@ -313,6 +313,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\wish-list.js"
     },
     {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\eBooks\\ardino.pdf",
+      "PackagePath": "staticwebassets\\eBooks\\ardino.pdf"
+    },
+    {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\arrow-growth.png",
       "PackagePath": "staticwebassets\\images\\arrow-growth.png"
     },

@@ -11,7 +11,6 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<Book> Book { get; set; }
         public DbSet<Author> Author { get; set; }
         public DbSet<Genre> Genre { get; set; }
-        public DbSet<AuthorBook> AuthorBook { get; set; }
         public DbSet<BookGenre> BookGenre { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<BType> BTypes { get; set; }
@@ -20,6 +19,10 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<SettingKeyValue> SettingKeyValue { get; set; }
         public DbSet<BookCategory> BookCategory { get; set; }
+        public DbSet<EBook> EBooks { get; set; }
+        public DbSet<ABook> ABooks { get; set; }
+        public List<BookBaseAuthor> BookBaseAuthor { get; set; }
+
         public override int SaveChanges()
         {
             var datas = ChangeTracker.Entries<BaseEntity>();

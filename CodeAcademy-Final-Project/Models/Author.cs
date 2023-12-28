@@ -3,6 +3,7 @@
     public class Author : BaseEntity
     {
         public string Name { get; set; }
-        public List<AuthorBook> AuthorBook { get; set; }
+
+        public List<BookBaseAuthor> BookBaseAuthor { get; set; }
     }
 }

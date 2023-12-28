@@ -19,8 +19,6 @@ namespace CodeAcademy_Final_Project.Controllers
             BookHomeVM vm = new();
             vm.Books=_context.Book
                 .Include(b=>b.BookCategory)
-                .Include(b=>b.AuthorBook)
-                .ThenInclude(b=>b.Author)
                 .ToList();
             vm.Categories=_context.Categories
                 .Include(c=>c.BookCategory)
@@ -35,8 +33,6 @@ namespace CodeAcademy_Final_Project.Controllers
         {
             if (id == null) return NotFound();
             var book = _context.Book
-                .Include(bt=>bt.AuthorBook)
-                .ThenInclude (bt=>bt.Author)
                 .FirstOrDefault(b=>b.Id==id);
             if(book == null) return NotFound();
            
