@@ -11,17 +11,17 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<Book> Book { get; set; }
         public DbSet<Author> Author { get; set; }
         public DbSet<Genre> Genre { get; set; }
-        public DbSet<BookGenre> BookGenre { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<BType> BTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<SettingKeyValue> SettingKeyValue { get; set; }
-        public DbSet<BookCategory> BookCategory { get; set; }
         public DbSet<EBook> EBooks { get; set; }
         public DbSet<ABook> ABooks { get; set; }
         public List<BookBaseAuthor> BookBaseAuthor { get; set; }
+        public List<BookBaseGenre> BookBaseGenre { get; set; }
+        public DbSet<BookBaseCategory> BookBaseCategory { get; set; }
 
         public override int SaveChanges()
         {
@@ -52,6 +52,7 @@ namespace CodeAcademy_Final_Project.DAL
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
             base.OnModelCreating(modelBuilder);
         }
+        
 
     }
 }

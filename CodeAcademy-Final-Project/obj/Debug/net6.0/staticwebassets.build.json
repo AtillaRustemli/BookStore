@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G+QB2y1F0C4GuEKEdxQ8GUFwChy/uFf4P38n27339OM=",
+  "Hash": "5/Bx+POWfAg0lwPbX+hJl5mm9Ml7iaI4T1JWhoNPPec=",
   "Source": "CodeAcademy-Final-Project",
   "BasePath": "_content/CodeAcademy-Final-Project",
   "Mode": "Default",
@@ -714,6 +714,23 @@
       "OriginalItemSpec": "wwwroot\\All-Sass\\Layout-sass\\layout\\_footer.scss"
     },
     {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\Layout-sass\\layout\\_header.scss",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "All-Sass/Layout-sass/layout/_header.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\All-Sass\\Layout-sass\\layout\\_header.scss"
+    },
+    {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\Layout-sass\\layout\\_header-in-scroll.scss",
       "SourceId": "CodeAcademy-Final-Project",
       "SourceType": "Discovered",
@@ -746,23 +763,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\All-Sass\\Layout-sass\\layout\\_header-navPart.scss"
-    },
-    {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\Layout-sass\\layout\\_header.scss",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "All-Sass/Layout-sass/layout/_header.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\All-Sass\\Layout-sass\\layout\\_header.scss"
     },
     {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\Layout-sass\\utilities\\_mixins.scss",
@@ -799,23 +799,6 @@
       "OriginalItemSpec": "wwwroot\\All-Sass\\Layout-sass\\utilities\\_shablons.scss"
     },
     {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\slick-sass\\_slick-theme.scss",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "All-Sass/slick-sass/_slick-theme.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\All-Sass\\slick-sass\\_slick-theme.scss"
-    },
-    {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\slick-sass\\_slick.scss",
       "SourceId": "CodeAcademy-Final-Project",
       "SourceType": "Discovered",
@@ -831,6 +814,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\All-Sass\\slick-sass\\_slick.scss"
+    },
+    {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\slick-sass\\_slick-theme.scss",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "All-Sass/slick-sass/_slick-theme.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\All-Sass\\slick-sass\\_slick-theme.scss"
     },
     {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\All-Sass\\Wish-List-sass\\base\\_base.scss",
@@ -1054,40 +1054,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\basket.css.map"
     },
     {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\book-detail.css",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "assets/css/book-detail.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\book-detail.css"
-    },
-    {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\book-detail.css.map",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "assets/css/book-detail.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\book-detail.css.map"
-    },
-    {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\book.css",
       "SourceId": "CodeAcademy-Final-Project",
       "SourceType": "Discovered",
@@ -1120,6 +1086,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\book.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\book-detail.css",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "assets/css/book-detail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\book-detail.css"
+    },
+    {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\book-detail.css.map",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "assets/css/book-detail.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\book-detail.css.map"
     },
     {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\layout.css",
@@ -1258,23 +1258,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\basket.js"
     },
     {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\js\\book-detaila.js",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "assets/js/book-detaila.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\book-detaila.js"
-    },
-    {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\js\\book.js",
       "SourceId": "CodeAcademy-Final-Project",
       "SourceType": "Discovered",
@@ -1290,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\book.js"
+    },
+    {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\js\\book-detaila.js",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "assets/js/book-detaila.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\book-detaila.js"
     },
     {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\js\\slick.js",
@@ -1496,23 +1496,6 @@
       "OriginalItemSpec": "wwwroot\\images\\facebook-like-header.png"
     },
     {
-      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\header-logo-upper.svg",
-      "SourceId": "CodeAcademy-Final-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
-      "BasePath": "_content/CodeAcademy-Final-Project",
-      "RelativePath": "images/header-logo-upper.svg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\header-logo-upper.svg"
-    },
-    {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\header-logo.png",
       "SourceId": "CodeAcademy-Final-Project",
       "SourceType": "Discovered",
@@ -1528,6 +1511,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\header-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\header-logo-upper.svg",
+      "SourceId": "CodeAcademy-Final-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\",
+      "BasePath": "_content/CodeAcademy-Final-Project",
+      "RelativePath": "images/header-logo-upper.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\header-logo-upper.svg"
     },
     {
       "Identity": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\images\\patment-method-stripe.svg",

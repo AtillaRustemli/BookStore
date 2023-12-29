@@ -23,6 +23,14 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired();
             builder.Property(c => c.BTypeId)
                 .IsRequired();
+            builder.Property(c => c.SocialMediaId)
+                .IsRequired();
+            builder.Property(c => c.Width)
+                .IsRequired();
+            builder.Property(c => c.Height)
+                .IsRequired();
+            builder.Property(c => c.Length)
+                .IsRequired();
             builder.HasData(
                 new Book
                 {
@@ -36,9 +44,13 @@ namespace CodeAcademy_Final_Project.Configurations
                     ImgUrl="book-example4.jpg",
                     SellCount = 0,
                     PopularityCount = 0,
-                    BTypeId=1
+                    BTypeId=1,
+                    SocialMediaId=1,
+                    Width=15.1,
+                    Height=5.4,
+                    Length=20.3,
 
-        }
+                }
                 );
         }
     }

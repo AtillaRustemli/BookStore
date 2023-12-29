@@ -14,14 +14,17 @@ namespace CodeAcademy_Final_Project.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string?type)
+        public IActionResult Index()
         {
             BookHomeVM vm = new();
             vm.Books=_context.Book
-                .Include(b=>b.BookCategory)
+                .Include(b => b.BookBaseAuthor)
+                .ThenInclude(ba => ba.Author)
+                .Where(b=>b.BTypeId==1)
+                .Include(b => b.BookBaseCategory)
                 .ToList();
             vm.Categories=_context.Categories
-                .Include(c=>c.BookCategory)
+                .Include(c=>c.BookBaseCategory)
                 .ThenInclude(bc=>bc.Book)
                 .ToList();
             vm.Promotions=_context.Promotions.ToList();
@@ -29,7 +32,7 @@ namespace CodeAcademy_Final_Project.Controllers
             
             return View(vm);
         }
-        public IActionResult Detail(int? id,int?typeId=1)
+        public IActionResult Detail(int? id)
         {
             if (id == null) return NotFound();
             var book = _context.Book

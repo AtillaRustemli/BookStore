@@ -5,6 +5,6 @@
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public List<BookGenre> BookGenre { get; set; }
+        public List<BookBaseGenre> BookBaseGenre { get; set; }
     }
 }

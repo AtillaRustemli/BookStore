@@ -25,6 +25,8 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired();
             builder.Property(c => c.EBookUrl)
                 .IsRequired();
+            builder.Property(c => c.SocialMediaId)
+                .IsRequired();
             builder.HasData(
                 new EBook
                 {
@@ -39,7 +41,8 @@ namespace CodeAcademy_Final_Project.Configurations
                     SellCount = 0,
                     PopularityCount = 0,
                     BTypeId = 2,
-                    EBookUrl="ardino.pdf"
+                    EBookUrl="ardino.pdf",
+                    SocialMediaId = 1
 
                 }
                 );

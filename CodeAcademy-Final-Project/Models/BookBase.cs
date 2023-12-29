@@ -15,14 +15,16 @@
         public long? PopularityCount { get; set; }
         public long? SellCount { get; set; }
         public string ImgUrl { get; set; }
+        public int SocialMediaId { get; set; }
+        public SocialMedia SocialMedia { get; set; }
         public int BTypeId { get; set; }
         public BType BType { get; set; }
-        public List<BookCategory> BookCategory { get; set; }
-        public List<BookGenre> BookGenre { get; set; }
         public int LanguageId { get; set; }
         public Language Language { get; set; }
         public int PromotionId { get; set; }
         public Promotion Promotion { get; set; }
         public List<BookBaseAuthor> BookBaseAuthor { get; set; }
+        public List<BookBaseGenre> BookBaseGenre { get; set; }
+        public List<BookBaseCategory> BookBaseCategory { get; set; }
     }
 }

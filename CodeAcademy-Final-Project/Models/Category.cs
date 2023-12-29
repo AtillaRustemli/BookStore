@@ -3,7 +3,7 @@
     public class Category:BaseEntity
     {
         public string Name { get; set; }
-        public List<BookCategory> BookCategory { get; set; }
+        public List<BookBaseCategory> BookBaseCategory { get; set; }
         public List<Genre> Genres { get; set; }
     }
 }

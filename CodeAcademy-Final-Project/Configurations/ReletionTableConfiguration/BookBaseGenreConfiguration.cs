@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
 {
-    public class BookBaseAuthorConfiguration : IEntityTypeConfiguration<BookBaseAuthor>
+    public class BookBaseGenreConfiguration : IEntityTypeConfiguration<BookBaseGenre>
     {
-        public void Configure(EntityTypeBuilder<BookBaseAuthor> builder)
+        public void Configure(EntityTypeBuilder<BookBaseGenre> builder)
         {
             builder.HasOne(ba => ba.Book)
                     .WithMany()
@@ -26,41 +26,36 @@ namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
                 .OnDelete(DeleteBehavior.NoAction)
                     .IsRequired(false);
 
-            builder.HasOne(ba => ba.Author)
+            builder.HasOne(ba => ba.Genre)
                 .WithMany()
-                .HasForeignKey(ba => ba.AuthorId)
+                .HasForeignKey(ba => ba.GenreId)
                 .OnDelete(DeleteBehavior.NoAction)
                     .IsRequired(false);
             builder.HasData(
-                 new BookBaseAuthor
+                 new BookBaseGenre
                  {
                      Id = 1,
-                     AuthorId = 1,
+                     GenreId = 1,
                      BookBaseId = 1,
                      TypeId = 1
-                   
-
                  },
-            new BookBaseAuthor
+            new BookBaseGenre
             {
                 Id = 2,
-                AuthorId = 1,
+                GenreId = 1,
                 BookBaseId = 1,
                 TypeId = 2
 
             },
-            new BookBaseAuthor
+            new BookBaseGenre
             {
                 Id = 3,
-                AuthorId = 1,
+                GenreId = 1,
                 BookBaseId = 1,
                 TypeId = 3
 
             }
             );
-
-
-
         }
     }
 }
