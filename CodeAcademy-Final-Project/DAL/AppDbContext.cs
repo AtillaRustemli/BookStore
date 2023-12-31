@@ -1,4 +1,5 @@
 ﻿using CodeAcademy_Final_Project.Models;
+using CodeAcademy_Final_Project.Models.ReletionTables;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodeAcademy_Final_Project.DAL
@@ -19,9 +20,15 @@ namespace CodeAcademy_Final_Project.DAL
         public DbSet<SettingKeyValue> SettingKeyValue { get; set; }
         public DbSet<EBook> EBooks { get; set; }
         public DbSet<ABook> ABooks { get; set; }
-        public List<BookBaseAuthor> BookBaseAuthor { get; set; }
-        public List<BookBaseGenre> BookBaseGenre { get; set; }
-        public DbSet<BookBaseCategory> BookBaseCategory { get; set; }
+        public List<BookAuthor> BookAuthor { get; set; }
+        public List<BookGenre> BookGenre { get; set; }
+        public DbSet<BookCategory> BookCategory { get; set; }
+        public List<ABookAuthor> ABookAuthor { get; set; }
+        public List<ABookGenre> ABookGenre { get; set; }
+        public DbSet<ABookCategory> ABookBCategory { get; set; }
+        public List<EBookAuthor> EBookBaseAuthor { get; set; }
+        public List<EBookGenre> EBookBaseGenre { get; set; }
+        public DbSet<EBookCategory> EBookBaseCategory { get; set; }
 
         public override int SaveChanges()
         {

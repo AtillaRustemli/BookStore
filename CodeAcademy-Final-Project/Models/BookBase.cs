@@ -23,8 +23,5 @@
         public Language Language { get; set; }
         public int PromotionId { get; set; }
         public Promotion Promotion { get; set; }
-        public List<BookBaseAuthor> BookBaseAuthor { get; set; }
-        public List<BookBaseGenre> BookBaseGenre { get; set; }
-        public List<BookBaseCategory> BookBaseCategory { get; set; }
     }
 }

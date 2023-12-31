@@ -129,7 +129,7 @@
               </h2>
 
               <ul class="trending-now-books">
-                    @foreach (var book in Model.Books.Where(b => b.BookBaseCategory.Any(bc => bc.CategoryId == 2)).Take(6).OrderByDescending(b => b.Id))
+                    @foreach (var book in Model.Books.Where(b => b.BookCategory.Any(bc => bc.CategoryId == 2)).Take(6).OrderByDescending(b => b.Id))
                     {
                         count++;
                         <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
@@ -194,10 +194,10 @@
                   <h4>
                     <a href="#">@book.Name</a>
                   </h4>
-                            <p>By : @foreach(var author in book.BookBaseAuthor.Where(ab => ab.BookBaseId == book.Id||ab.TypeId==1))
+                            <p>By :@* @foreach(var author in book.BookBaseAuthor.Where(ab => ab.BookBaseId == book.Id||ab.TypeId==1))
                                                 {
                                     @author.Author.Name
-                                }
+                                }*@
                             </p>
                 </div>
               </li>
@@ -216,12 +216,12 @@
             <li>
               <div class="popular-categories-in-books-list-images">
                 <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
-                    @foreach (var book in category.BookBaseCategory.Where(c=>c.TypeId==1).Take(3))
+                   @* @foreach (var book in category.BookBaseCategory.Where(c=>c.TypeId==1).Take(3))
                      {
                          count++;
                          <img src="~/images/@book.Book.ImgUrl" class="@(count==2?"center-image":"")" alt="" />
 
-                     }
+                     }*@
                      @{
                        count = 0;
                      }

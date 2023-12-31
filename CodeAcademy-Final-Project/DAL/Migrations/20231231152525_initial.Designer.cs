@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeAcademy_Final_Project.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231229191913_addedReletionBetweenBooksAndSocialMedia")]
-    partial class addedReletionBetweenBooksAndSocialMedia
+    [Migration("20231231152525_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -108,7 +108,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 29, 23, 19, 12, 756, DateTimeKind.Local).AddTicks(9120),
+                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(2521),
                             SellCount = 0L,
                             SocialMediaId = 1
                         });
@@ -277,245 +277,10 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 29, 23, 19, 12, 756, DateTimeKind.Local).AddTicks(9825),
+                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3228),
                             SellCount = 0L,
                             SocialMediaId = 1,
                             Width = 15.1
-                        });
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseAuthor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("ABookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AuthorId1")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookBaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("EBookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ABookId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("AuthorId1");
-
-                    b.HasIndex("BookBaseId");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("EBookId");
-
-                    b.ToTable("BookBaseAuthor");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AuthorId = 1,
-                            BookBaseId = 1,
-                            TypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AuthorId = 1,
-                            BookBaseId = 1,
-                            TypeId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AuthorId = 1,
-                            BookBaseId = 1,
-                            TypeId = 3
-                        });
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("ABookId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookBaseId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CategoryId1")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("EBookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ABookId");
-
-                    b.HasIndex("BookBaseId");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("CategoryId1");
-
-                    b.HasIndex("EBookId");
-
-                    b.ToTable("BookBaseCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BookBaseId = 1,
-                            CategoryId = 1,
-                            TypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BookBaseId = 1,
-                            CategoryId = 1,
-                            TypeId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BookBaseId = 1,
-                            CategoryId = 1,
-                            TypeId = 1
-                        });
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseGenre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("ABookId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookBaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("EBookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("GenreId1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ABookId");
-
-                    b.HasIndex("BookBaseId");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("EBookId");
-
-                    b.HasIndex("GenreId");
-
-                    b.HasIndex("GenreId1");
-
-                    b.ToTable("BookBaseGenre");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BookBaseId = 1,
-                            GenreId = 1,
-                            TypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BookBaseId = 1,
-                            GenreId = 1,
-                            TypeId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BookBaseId = 1,
-                            GenreId = 1,
-                            TypeId = 3
                         });
                 });
 
@@ -681,7 +446,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 29, 23, 19, 12, 757, DateTimeKind.Local).AddTicks(514),
+                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3864),
                             SellCount = 0L,
                             SocialMediaId = 1
                         });
@@ -816,10 +581,378 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2023, 12, 29, 23, 19, 12, 757, DateTimeKind.Local).AddTicks(1034),
+                            EndTime = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(4390),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookAuthor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ABookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ABookId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("ABookAuthor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ABookId = 1,
+                            AuthorId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ABookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ABookId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ABookBCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ABookId = 1,
+                            CategoryId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookGenre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ABookId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ABookId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("ABookGenre");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ABookId = 1,
+                            GenreId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookAuthor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BookId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BookAuthor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            BookId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("BookId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("BookCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            CategoryId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookGenre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("BookId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("BookGenre");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            GenreId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookAuthor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EBookId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("EBookId");
+
+                    b.ToTable("EBookAuthor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            EBookId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EBookId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("EBookId");
+
+                    b.ToTable("EBookBaseCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            EBookId = 1
+                        });
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookGenre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EBookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EBookId");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("EBookGenre");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EBookId = 1,
+                            GenreId = 1
                         });
                 });
 
@@ -982,151 +1115,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Navigation("SocialMedia");
                 });
 
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseAuthor", b =>
-                {
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", null)
-                        .WithMany("BookBaseAuthor")
-                        .HasForeignKey("ABookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Author", null)
-                        .WithMany("BookBaseAuthor")
-                        .HasForeignKey("AuthorId1");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", null)
-                        .WithMany("BookBaseAuthor")
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", null)
-                        .WithMany("BookBaseAuthor")
-                        .HasForeignKey("EBookId");
-
-                    b.Navigation("ABook");
-
-                    b.Navigation("Author");
-
-                    b.Navigation("Book");
-
-                    b.Navigation("EBook");
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseCategory", b =>
-                {
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", null)
-                        .WithMany("BookBaseCategory")
-                        .HasForeignKey("ABookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", null)
-                        .WithMany("BookBaseCategory")
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Category", null)
-                        .WithMany("BookBaseCategory")
-                        .HasForeignKey("CategoryId1");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", null)
-                        .WithMany("BookBaseCategory")
-                        .HasForeignKey("EBookId");
-
-                    b.Navigation("ABook");
-
-                    b.Navigation("Book");
-
-                    b.Navigation("Category");
-
-                    b.Navigation("EBook");
-                });
-
-            modelBuilder.Entity("CodeAcademy_Final_Project.Models.BookBaseGenre", b =>
-                {
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", null)
-                        .WithMany("BookBaseGenre")
-                        .HasForeignKey("ABookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
-                        .WithMany()
-                        .HasForeignKey("BookBaseId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Book", null)
-                        .WithMany("BookBaseGenre")
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", null)
-                        .WithMany("BookBaseGenre")
-                        .HasForeignKey("EBookId");
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", "Genre")
-                        .WithMany()
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", null)
-                        .WithMany("BookBaseGenre")
-                        .HasForeignKey("GenreId1");
-
-                    b.Navigation("ABook");
-
-                    b.Navigation("Book");
-
-                    b.Navigation("EBook");
-
-                    b.Navigation("Genre");
-                });
-
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.EBook", b =>
                 {
                     b.HasOne("CodeAcademy_Final_Project.Models.BType", "BType")
@@ -1173,29 +1161,208 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookAuthor", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
+                        .WithMany("ABookAuthor")
+                        .HasForeignKey("ABookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Author", "Author")
+                        .WithMany("ABookAuthor")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", null)
+                        .WithMany("ABookAuthor")
+                        .HasForeignKey("GenreId");
+
+                    b.Navigation("ABook");
+
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookCategory", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
+                        .WithMany("ABookCategory")
+                        .HasForeignKey("ABookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Category", "Category")
+                        .WithMany("ABookCategory")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ABook");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.ABookGenre", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
+                        .WithMany("ABookGenre")
+                        .HasForeignKey("ABookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ABook");
+
+                    b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookAuthor", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.Author", "Author")
+                        .WithMany("BookBaseAuthor")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
+                        .WithMany("BookAuthor")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+
+                    b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookCategory", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
+                        .WithMany("BookCategory")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Category", "Category")
+                        .WithMany("BookBaseCategory")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.BookGenre", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
+                        .WithMany("BookGenre")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", "Genre")
+                        .WithMany("BookBaseGenre")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookAuthor", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.Author", "Author")
+                        .WithMany("EBookAuthor")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
+                        .WithMany("EBookAuthor")
+                        .HasForeignKey("EBookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+
+                    b.Navigation("EBook");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookCategory", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.Category", "Category")
+                        .WithMany("EBookCategory")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
+                        .WithMany("EBookCategory")
+                        .HasForeignKey("EBookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("EBook");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.ReletionTables.EBookGenre", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.EBook", "EBook")
+                        .WithMany("EBookGenre")
+                        .HasForeignKey("EBookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CodeAcademy_Final_Project.Models.Genre", "Genre")
+                        .WithMany("EBookGenre")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EBook");
+
+                    b.Navigation("Genre");
+                });
+
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.ABook", b =>
                 {
+                    b.Navigation("ABookAuthor");
+
+                    b.Navigation("ABookCategory");
+
                     b.Navigation("ABookChapters");
 
-                    b.Navigation("BookBaseAuthor");
-
-                    b.Navigation("BookBaseCategory");
-
-                    b.Navigation("BookBaseGenre");
+                    b.Navigation("ABookGenre");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Author", b =>
                 {
+                    b.Navigation("ABookAuthor");
+
                     b.Navigation("BookBaseAuthor");
+
+                    b.Navigation("EBookAuthor");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Book", b =>
                 {
-                    b.Navigation("BookBaseAuthor");
+                    b.Navigation("BookAuthor");
 
-                    b.Navigation("BookBaseCategory");
+                    b.Navigation("BookCategory");
 
-                    b.Navigation("BookBaseGenre");
+                    b.Navigation("BookGenre");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.BType", b =>
@@ -1205,23 +1372,31 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Category", b =>
                 {
+                    b.Navigation("ABookCategory");
+
                     b.Navigation("BookBaseCategory");
+
+                    b.Navigation("EBookCategory");
 
                     b.Navigation("Genres");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.EBook", b =>
                 {
-                    b.Navigation("BookBaseAuthor");
+                    b.Navigation("EBookAuthor");
 
-                    b.Navigation("BookBaseCategory");
+                    b.Navigation("EBookCategory");
 
-                    b.Navigation("BookBaseGenre");
+                    b.Navigation("EBookGenre");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Genre", b =>
                 {
+                    b.Navigation("ABookAuthor");
+
                     b.Navigation("BookBaseGenre");
+
+                    b.Navigation("EBookGenre");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Language", b =>

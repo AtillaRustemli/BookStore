@@ -18,14 +18,14 @@ namespace CodeAcademy_Final_Project.Controllers
         {
             BookHomeVM vm = new();
             vm.Books=_context.Book
-                .Include(b => b.BookBaseAuthor)
+                .Include(b => b.BookAuthor)
                 .ThenInclude(ba => ba.Author)
                 .Where(b=>b.BTypeId==1)
-                .Include(b => b.BookBaseCategory)
+                .Include(b => b.BookCategory)
                 .ToList();
             vm.Categories=_context.Categories
                 .Include(c=>c.BookBaseCategory)
-                .ThenInclude(bc=>bc.Book)
+                .ThenInclude(bc=>bc.Book)   
                 .ToList();
             vm.Promotions=_context.Promotions.ToList();
             vm.Genres=_context.Genre.ToList();
@@ -36,8 +36,13 @@ namespace CodeAcademy_Final_Project.Controllers
         {
             if (id == null) return NotFound();
             var book = _context.Book
+                .Include(b=>b.BookAuthor)
+                .ThenInclude(ba => ba.Author)
+                .Include(b=>b.BookGenre)
+                .ThenInclude(ba => ba.Genre)
                 .FirstOrDefault(b=>b.Id==id);
             if(book == null) return NotFound();
+            book.SocialMedia = _context.SocialMedias.FirstOrDefault(sm => sm.Id == book.SocialMediaId);
            
 
             return View(book);

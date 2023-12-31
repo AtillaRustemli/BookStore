@@ -98,10 +98,10 @@
                     </p>
                     <p class="author-name">By : 
                         <a href="#">
-                      @*  @foreach (var author in Model.AuthorBook.Where(ab=>ab.BookId==Model.Id))
+                            @foreach (var author in Model.BookAuthor.Where(ab => ab.BookId == Model.Id))
                             {
                                 @(author.Author.Name+",")
-                            }*@
+                            }
                             </a></p>
                 </div>
                 <div class="about-book">
@@ -118,7 +118,7 @@
                             <i class="fa-solid fa-book"></i>
                             <div class="info">
                                 <p>Dimensions</p>
-                                <p>24x16x3</p>
+                                <p>@Model.Height x @Model.Width x @Model.Length</p>
                             </div>
                         </div>
                         <div class="book-detail">
@@ -130,13 +130,13 @@
                         <p>Share this book:</p>
                         <ul class="share-this-book-icon-list">
                             <li>
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="@Model.SocialMedia.Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                                <a href="@Model.SocialMedia.Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="@Model.SocialMedia.Twitter"><i class="fa-brands fa-twitter"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -145,7 +145,7 @@
             <div class="book-product-info-right">
                 <div class="book-product-info-checkout-system">
                     <h3>PAPERBACK</h3>
-                    <div class="cost">$28.50</div>
+                    <div class="cost">$@Model.Price</div>
                     <div class="payment">
                         <div class="buy-now">
                             <a href="#">
