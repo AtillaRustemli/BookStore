@@ -11,8 +11,15 @@ namespace CodeAcademy_Final_Project.Configurations
             builder.Property(c => c.Name)
              .IsRequired()
              .HasMaxLength(60);
+            builder.Property(c => c.SocialMediaId)
+                .IsRequired();
             builder.HasData(
-                new Author { Id=1,Name="Mir Celal"}
+                new Author {
+                    Id=1,
+                    Name="Mir Celal",
+                    SocialMediaId = 1
+
+                }
                 );
         }
     }

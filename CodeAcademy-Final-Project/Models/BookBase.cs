@@ -15,8 +15,6 @@
         public long? PopularityCount { get; set; }
         public long? SellCount { get; set; }
         public string ImgUrl { get; set; }
-        public int SocialMediaId { get; set; }
-        public SocialMedia SocialMedia { get; set; }
         public int BTypeId { get; set; }
         public BType BType { get; set; }
         public int LanguageId { get; set; }

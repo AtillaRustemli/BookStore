@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeAcademy_Final_Project.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231231152525_initial")]
+    [Migration("20240101114813_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,9 +76,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<long?>("SellCount")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("SocialMediaId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -89,9 +86,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasIndex("LanguageId");
 
                     b.HasIndex("PromotionId");
-
-                    b.HasIndex("SocialMediaId")
-                        .IsUnique();
 
                     b.ToTable("ABooks");
 
@@ -108,9 +102,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(2521),
-                            SellCount = 0L,
-                            SocialMediaId = 1
+                            Released = new DateTime(2024, 1, 1, 15, 48, 13, 392, DateTimeKind.Local).AddTicks(9516),
+                            SellCount = 0L
                         });
                 });
 
@@ -172,10 +165,16 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
+                    b.Property<int>("SocialMediaId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SocialMediaId")
+                        .IsUnique();
 
                     b.ToTable("Author");
 
@@ -183,7 +182,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Mir Celal"
+                            Name = "Mir Celal",
+                            SocialMediaId = 1
                         });
                 });
 
@@ -226,6 +226,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
+                    b.Property<int>("PageCount")
+                        .HasColumnType("int");
+
                     b.Property<long?>("PopularityCount")
                         .HasColumnType("bigint");
 
@@ -241,9 +244,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<long?>("SellCount")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("SocialMediaId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -258,9 +258,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("PromotionId");
 
-                    b.HasIndex("SocialMediaId")
-                        .IsUnique();
-
                     b.ToTable("Book");
 
                     b.HasData(
@@ -274,12 +271,12 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             LanguageId = 1,
                             Length = 20.300000000000001,
                             Name = "Talk to the Heart",
+                            PageCount = 304,
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3228),
+                            Released = new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(216),
                             SellCount = 0L,
-                            SocialMediaId = 1,
                             Width = 15.1
                         });
                 });
@@ -414,9 +411,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<long?>("SellCount")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("SocialMediaId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -427,9 +421,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasIndex("LanguageId");
 
                     b.HasIndex("PromotionId");
-
-                    b.HasIndex("SocialMediaId")
-                        .IsUnique();
 
                     b.ToTable("EBooks");
 
@@ -446,9 +437,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3864),
-                            SellCount = 0L,
-                            SocialMediaId = 1
+                            Released = new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(771),
+                            SellCount = 0L
                         });
                 });
 
@@ -581,7 +571,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(4390),
+                            EndTime = new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(1254),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -1054,19 +1044,11 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodeAcademy_Final_Project.Models.SocialMedia", "SocialMedia")
-                        .WithOne("ABook")
-                        .HasForeignKey("CodeAcademy_Final_Project.Models.ABook", "SocialMediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("BType");
 
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
-
-                    b.Navigation("SocialMedia");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.ABookChapter", b =>
@@ -1078,6 +1060,17 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("ABook");
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.Author", b =>
+                {
+                    b.HasOne("CodeAcademy_Final_Project.Models.SocialMedia", "SocialMedia")
+                        .WithOne("Author")
+                        .HasForeignKey("CodeAcademy_Final_Project.Models.Author", "SocialMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialMedia");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Book", b =>
@@ -1100,19 +1093,11 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodeAcademy_Final_Project.Models.SocialMedia", "SocialMedia")
-                        .WithOne("Book")
-                        .HasForeignKey("CodeAcademy_Final_Project.Models.Book", "SocialMediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("BType");
 
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
-
-                    b.Navigation("SocialMedia");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.EBook", b =>
@@ -1135,19 +1120,11 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodeAcademy_Final_Project.Models.SocialMedia", "SocialMedia")
-                        .WithOne("EBook")
-                        .HasForeignKey("CodeAcademy_Final_Project.Models.EBook", "SocialMediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("BType");
 
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
-
-                    b.Navigation("SocialMedia");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Genre", b =>
@@ -1411,13 +1388,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.SocialMedia", b =>
                 {
-                    b.Navigation("ABook")
-                        .IsRequired();
-
-                    b.Navigation("Book")
-                        .IsRequired();
-
-                    b.Navigation("EBook")
+                    b.Navigation("Author")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

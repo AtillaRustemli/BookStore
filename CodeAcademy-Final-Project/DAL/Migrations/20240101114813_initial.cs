@@ -10,22 +10,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Author",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Author", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "BTypes",
                 columns: table => new
                 {
@@ -169,7 +153,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     PopularityCount = table.Column<long>(type: "bigint", nullable: true),
                     SellCount = table.Column<long>(type: "bigint", nullable: true),
                     ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SocialMediaId = table.Column<int>(type: "int", nullable: false),
                     BTypeId = table.Column<int>(type: "int", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     PromotionId = table.Column<int>(type: "int", nullable: false)
@@ -195,12 +178,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         principalTable: "Promotions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ABooks_SocialMedias_SocialMediaId",
-                        column: x => x.SocialMediaId,
-                        principalTable: "SocialMedias",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -212,6 +189,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     Height = table.Column<double>(type: "float", nullable: false),
                     Length = table.Column<double>(type: "float", nullable: false),
                     Width = table.Column<double>(type: "float", nullable: false),
+                    PageCount = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -222,7 +200,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     PopularityCount = table.Column<long>(type: "bigint", nullable: true),
                     SellCount = table.Column<long>(type: "bigint", nullable: true),
                     ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SocialMediaId = table.Column<int>(type: "int", nullable: false),
                     BTypeId = table.Column<int>(type: "int", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     PromotionId = table.Column<int>(type: "int", nullable: false)
@@ -248,12 +225,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         principalTable: "Promotions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Book_SocialMedias_SocialMediaId",
-                        column: x => x.SocialMediaId,
-                        principalTable: "SocialMedias",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -273,7 +244,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     PopularityCount = table.Column<long>(type: "bigint", nullable: true),
                     SellCount = table.Column<long>(type: "bigint", nullable: true),
                     ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SocialMediaId = table.Column<int>(type: "int", nullable: false),
                     BTypeId = table.Column<int>(type: "int", nullable: false),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
                     PromotionId = table.Column<int>(type: "int", nullable: false)
@@ -299,47 +269,29 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         principalTable: "Promotions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EBooks_SocialMedias_SocialMediaId",
-                        column: x => x.SocialMediaId,
-                        principalTable: "SocialMedias",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ABookAuthor",
+                name: "Author",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ABookId = table.Column<int>(type: "int", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false),
-                    GenreId = table.Column<int>(type: "int", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    SocialMediaId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ABookAuthor", x => x.Id);
+                    table.PrimaryKey("PK_Author", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ABookAuthor_ABooks_ABookId",
-                        column: x => x.ABookId,
-                        principalTable: "ABooks",
+                        name: "FK_Author_SocialMedias_SocialMediaId",
+                        column: x => x.SocialMediaId,
+                        principalTable: "SocialMedias",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ABookAuthor_Author_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Author",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ABookAuthor_Genre_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genre",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -424,35 +376,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BookAuthor",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BookId = table.Column<int>(type: "int", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BookAuthor", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BookAuthor_Author_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Author",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BookAuthor_Book_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Book",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "BookCategory",
                 columns: table => new
                 {
@@ -506,35 +429,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         name: "FK_BookGenre_Genre_GenreId",
                         column: x => x.GenreId,
                         principalTable: "Genre",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EBookAuthor",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EBookId = table.Column<int>(type: "int", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EBookAuthor", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EBookAuthor_Author_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Author",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EBookAuthor_EBooks_EBookId",
-                        column: x => x.EBookId,
-                        principalTable: "EBooks",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -597,10 +491,98 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Author",
-                columns: new[] { "Id", "CreatedAt", "DeletedAt", "Name", "UpdatedAt" },
-                values: new object[] { 1, null, null, "Mir Celal", null });
+            migrationBuilder.CreateTable(
+                name: "ABookAuthor",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ABookId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    GenreId = table.Column<int>(type: "int", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ABookAuthor", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ABookAuthor_ABooks_ABookId",
+                        column: x => x.ABookId,
+                        principalTable: "ABooks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ABookAuthor_Author_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Author",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ABookAuthor_Genre_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genre",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BookAuthor",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BookId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookAuthor", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BookAuthor_Author_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Author",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookAuthor_Book_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Book",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EBookAuthor",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EBookId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EBookAuthor", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EBookAuthor_Author_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Author",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EBookAuthor_EBooks_EBookId",
+                        column: x => x.EBookId,
+                        principalTable: "EBooks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.InsertData(
                 table: "BTypes",
@@ -629,7 +611,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Promotions",
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "Description", "DetailImageUrl", "EndTime", "ImgUrl", "Name", "Title", "UpdatedAt" },
-                values: new object[] { 1, null, null, "Look at our fantasting promotion.This is amasing!!!", "promotion-detail1.jpg", new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(4390), "promotion-image1.jpg", "New Year Discount", "Amasing new year discount", null });
+                values: new object[] { 1, null, null, "Look at our fantasting promotion.This is amasing!!!", "promotion-detail1.jpg", new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(1254), "promotion-image1.jpg", "New Year Discount", "Amasing new year discount", null });
 
             migrationBuilder.InsertData(
                 table: "SettingKeyValue",
@@ -643,18 +625,23 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "ABooks",
-                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "ImgUrl", "LanguageId", "Name", "Narrator", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "SocialMediaId", "UpdatedAt" },
-                values: new object[] { 1, 2, null, null, "This is book's description and there is nothing but description so good luck)", "book-example4.jpg", 1, "Talk to the Heart", "Atilla", 0L, 11.0, 1, new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(2521), 0L, 1, null });
+                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "ImgUrl", "LanguageId", "Name", "Narrator", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "UpdatedAt" },
+                values: new object[] { 1, 2, null, null, "This is book's description and there is nothing but description so good luck)", "book-example4.jpg", 1, "Talk to the Heart", "Atilla", 0L, 11.0, 1, new DateTime(2024, 1, 1, 15, 48, 13, 392, DateTimeKind.Local).AddTicks(9516), 0L, null });
+
+            migrationBuilder.InsertData(
+                table: "Author",
+                columns: new[] { "Id", "CreatedAt", "DeletedAt", "Name", "SocialMediaId", "UpdatedAt" },
+                values: new object[] { 1, null, null, "Mir Celal", 1, null });
 
             migrationBuilder.InsertData(
                 table: "Book",
-                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "Height", "ImgUrl", "LanguageId", "Length", "Name", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "SocialMediaId", "UpdatedAt", "Width" },
-                values: new object[] { 1, 1, null, null, "This is book's description and there is nothing but description so good luck)", 5.4000000000000004, "book-example4.jpg", 1, 20.300000000000001, "Talk to the Heart", 0L, 11.0, 1, new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3228), 0L, 1, null, 15.1 });
+                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "Height", "ImgUrl", "LanguageId", "Length", "Name", "PageCount", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "UpdatedAt", "Width" },
+                values: new object[] { 1, 1, null, null, "This is book's description and there is nothing but description so good luck)", 5.4000000000000004, "book-example4.jpg", 1, 20.300000000000001, "Talk to the Heart", 304, 0L, 11.0, 1, new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(216), 0L, null, 15.1 });
 
             migrationBuilder.InsertData(
                 table: "EBooks",
-                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "EBookUrl", "ImgUrl", "LanguageId", "Name", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "SocialMediaId", "UpdatedAt" },
-                values: new object[] { 1, 2, null, null, "This is book's description and there is nothing but description so good luck)", "ardino.pdf", "book-example4.jpg", 1, "Talk to the Heart", 0L, 11.0, 1, new DateTime(2023, 12, 31, 19, 25, 25, 457, DateTimeKind.Local).AddTicks(3864), 0L, 1, null });
+                columns: new[] { "Id", "BTypeId", "CreatedAt", "DeletedAt", "Description", "EBookUrl", "ImgUrl", "LanguageId", "Name", "PopularityCount", "Price", "PromotionId", "Released", "SellCount", "UpdatedAt" },
+                values: new object[] { 1, 2, null, null, "This is book's description and there is nothing but description so good luck)", "ardino.pdf", "book-example4.jpg", 1, "Talk to the Heart", 0L, 11.0, 1, new DateTime(2024, 1, 1, 15, 48, 13, 393, DateTimeKind.Local).AddTicks(771), 0L, null });
 
             migrationBuilder.InsertData(
                 table: "Genre",
@@ -767,8 +754,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 column: "PromotionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ABooks_SocialMediaId",
-                table: "ABooks",
+                name: "IX_Author_SocialMediaId",
+                table: "Author",
                 column: "SocialMediaId",
                 unique: true);
 
@@ -786,12 +773,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 name: "IX_Book_PromotionId",
                 table: "Book",
                 column: "PromotionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Book_SocialMediaId",
-                table: "Book",
-                column: "SocialMediaId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookAuthor_AuthorId",
@@ -869,12 +850,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 column: "PromotionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EBooks_SocialMediaId",
-                table: "EBooks",
-                column: "SocialMediaId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Genre_CategoryId",
                 table: "Genre",
                 column: "CategoryId");
@@ -931,6 +906,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 name: "Genre");
 
             migrationBuilder.DropTable(
+                name: "SocialMedias");
+
+            migrationBuilder.DropTable(
                 name: "BTypes");
 
             migrationBuilder.DropTable(
@@ -938,9 +916,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Promotions");
-
-            migrationBuilder.DropTable(
-                name: "SocialMedias");
 
             migrationBuilder.DropTable(
                 name: "Categories");

@@ -5,8 +5,6 @@
         public string? Facebook { get; set; }
         public string? Twitter { get; set; }
         public string? Pinterest { get; set; }
-        public Book Book { get; set; }
-        public ABook ABook { get; set; }
-        public EBook EBook { get; set; }
+        public Author Author { get; set; }
     }
 }

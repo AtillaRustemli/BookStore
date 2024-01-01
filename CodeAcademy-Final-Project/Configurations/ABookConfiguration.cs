@@ -25,8 +25,6 @@ namespace CodeAcademy_Final_Project.Configurations
                 .IsRequired();
             builder.Property(c => c.Narrator)
                 .IsRequired();
-            builder.Property(c => c.SocialMediaId)
-                .IsRequired();
             builder.HasData(
                 new ABook
                 {
@@ -42,7 +40,6 @@ namespace CodeAcademy_Final_Project.Configurations
                     PopularityCount = 0,
                     BTypeId = 2,
                     Narrator="Atilla",
-                    SocialMediaId=1
 
                 }
                 );

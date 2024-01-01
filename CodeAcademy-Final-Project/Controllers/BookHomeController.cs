@@ -38,11 +38,12 @@ namespace CodeAcademy_Final_Project.Controllers
             var book = _context.Book
                 .Include(b=>b.BookAuthor)
                 .ThenInclude(ba => ba.Author)
+                .ThenInclude(a=>a.SocialMedia)
                 .Include(b=>b.BookGenre)
                 .ThenInclude(ba => ba.Genre)
                 .FirstOrDefault(b=>b.Id==id);
             if(book == null) return NotFound();
-            book.SocialMedia = _context.SocialMedias.FirstOrDefault(sm => sm.Id == book.SocialMediaId);
+            
            
 
             return View(book);
