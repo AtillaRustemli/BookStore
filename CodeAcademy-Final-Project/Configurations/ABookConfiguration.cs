@@ -38,7 +38,7 @@ namespace CodeAcademy_Final_Project.Configurations
                     ImgUrl = "book-example4.jpg",
                     SellCount = 0,
                     PopularityCount = 0,
-                    BTypeId = 2,
+                    BTypeId = 3,
                     Narrator="Atilla",
 
                 }

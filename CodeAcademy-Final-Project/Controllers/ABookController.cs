@@ -38,8 +38,11 @@ namespace CodeAcademy_Final_Project.Controllers
             if (id == null) return NotFound();
             var book = _context.ABooks
                 .Include(b => b.ABookCategory)
+                .ThenInclude(ba => ba.Category)
                 .Include(b => b.Book)
                 .ThenInclude(ab => ab.BType)
+                .Include(ab => ab.EBook)
+                .ThenInclude(eb=>eb.BType)
                 .Include(b => b.BType)
                 .Include(b => b.ABookAuthor)
                 .ThenInclude(ba => ba.Author)

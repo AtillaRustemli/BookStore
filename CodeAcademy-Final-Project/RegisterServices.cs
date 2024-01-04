@@ -1,4 +1,9 @@
 ﻿using CodeAcademy_Final_Project.DAL;
+using CodeAcademy_Final_Project.Helpers.ErrorDescriber;
+using CodeAcademy_Final_Project.Models;
+using CodeAcademy_Final_Project.Validators.AccountValidators;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodeAcademy_Final_Project
@@ -7,12 +12,29 @@ namespace CodeAcademy_Final_Project
     {
         public static void Register(this IServiceCollection services,IConfiguration config)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddFluentValidation(opt => opt.RegisterValidatorsFromAssemblyContaining<RegisterVMValidator>());
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
             services.AddHttpContextAccessor();
+            services.AddIdentity<AppUser, IdentityRole>(identityOptions =>
+            {
+                identityOptions.SignIn.RequireConfirmedEmail = true;
+                identityOptions.Password.RequireNonAlphanumeric = true;
+                identityOptions.Password.RequiredLength = 8;
+                identityOptions.Password.RequireDigit = true;
+                identityOptions.Password.RequireLowercase = true;
+                identityOptions.Password.RequireUppercase = true;
+
+                identityOptions.User.RequireUniqueEmail = true;
+                identityOptions.Lockout.MaxFailedAccessAttempts = 5;
+                identityOptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(20);
+                identityOptions.Lockout.AllowedForNewUsers = true;
+            })
+               .AddDefaultTokenProviders()
+               .AddEntityFrameworkStores<AppDbContext>()
+               .AddErrorDescriber<CustomIdentityErrorDescriber>();
         }
     }
 }

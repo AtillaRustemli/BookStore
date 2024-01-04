@@ -66,3 +66,4 @@ C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-
 C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project\obj\Debug\net6.0\CodeAcademy-Final-Project.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project\bin\Debug\net6.0\package-lock.json
 C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project\bin\Debug\net6.0\package.json
+C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

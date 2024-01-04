@@ -77,7 +77,7 @@
                     @if (Model.ABookId != null)
                     {
                         <div class="book-type-child">
-                            <a href="#">
+                            <a asp-controller="abook" asp-action="detail" asp-route-id="@Model.ABook.Id">
                                 <h2 class="book-type-child-title">@Model.ABook.BType.Name.ToUpper()</h2>
                                 <p class="book-type-child-coast">$@Model.ABook.Price</p>
 
@@ -92,7 +92,7 @@
                     @if (Model.EBookId != null)
                     {
                         <div class="book-type-child ">
-                            <a href="#">
+                            <a asp-controller="ebook" asp-action="detail" asp-route-id="@Model.EBook.Id">
                                 <h2 class="book-type-child-title">@Model.EBook.BType.Name.ToUpper()</h2>
                                 <p class="book-type-child-coast">$@Model.EBook.Price</p>
                             </a>

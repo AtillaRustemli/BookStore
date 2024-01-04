@@ -24,12 +24,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUJvb2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/EBook/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUJvb2tcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/EBook/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUJvb2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Shared/Components/Footer/Default.cshtml]
@@ -42,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/WishList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/_ViewImports.cshtml]

@@ -9,5 +9,7 @@ namespace CodeAcademy_Final_Project.Models
         public List<EBookAuthor> EBookAuthor { get; set; }
         public List<EBookGenre> EBookGenre { get; set; }
         public List<EBookCategory> EBookCategory { get; set; }
+        public int? ABookId { get; set; }
+        public ABook ABook { get; set; }
     }
 }

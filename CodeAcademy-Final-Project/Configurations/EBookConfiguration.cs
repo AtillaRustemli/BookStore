@@ -40,6 +40,7 @@ namespace CodeAcademy_Final_Project.Configurations
                     PopularityCount = 0,
                     BTypeId = 2,
                     EBookUrl="ardino.pdf",
+                    ABookId= 1,
 
                 }
                 );

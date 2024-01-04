@@ -229,6 +229,18 @@
       "PackagePath": "staticwebassets\\All-Sass\\slick-sass\\_slick.scss"
     },
     {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\AudioBooks\\Chapter1-audiobook.m4a",
+      "PackagePath": "staticwebassets\\AudioBooks\\Chapter1-audiobook.m4a"
+    },
+    {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\AudioBooks\\Chapter2-audiobook.m4a",
+      "PackagePath": "staticwebassets\\AudioBooks\\Chapter2-audiobook.m4a"
+    },
+    {
+      "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\AudioBooks\\Chapter3-audiobook.m4a",
+      "PackagePath": "staticwebassets\\AudioBooks\\Chapter3-audiobook.m4a"
+    },
+    {
       "Id": "C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project\\wwwroot\\assets\\css\\Promotion-detail.css",
       "PackagePath": "staticwebassets\\assets\\css\\Promotion-detail.css"
     },

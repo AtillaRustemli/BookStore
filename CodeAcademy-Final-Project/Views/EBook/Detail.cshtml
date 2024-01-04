@@ -1,0 +1,405 @@
+﻿@model EBook
+@{
+    ViewData["CssLink"] = " /assets/css/book-detail.css";
+    ViewData["JsSource"] = "/assets/js/book-detaila.js";
+}
+
+<div class="wish-list-drawer">
+    <p class="cancel-btn"><i class="fa-solid fa-x"></i></p>
+    <div class="form-in-wish-list-drawer">
+        <h2 class="title">Add item to wish list</h2>
+        <p>Select a list to add</p>
+        <form class="wish-list-drawer-form">
+            <div class="wish-list">
+                <select name="wishList" id="">
+                    <option value="Atilla">Atilla</option>
+                    <option value="Atilla1">Atilla1</option>
+                    <option value="Atilla2">Atilla2</option>
+                </select>
+            </div>
+            <div class="add-to-list-btn">
+                <button type="submit"><p>Add to List</p></button>
+            </div>
+        </form>
+        <p class="create-wish-list-in-drawer">
+            Or :
+            <span class="wish-list-create-drawer-open-btn">
+                <span>
+                    <i class="fa-solid fa-plus"></i> Create and add to a new wish
+                    list
+                </span>
+            </span>
+        </p>
+    </div>
+</div>
+<div class="wish-list-create-drawer">
+    <p class="create-drawer-cancel-btn"><i class="fa-solid fa-x"></i></p>
+    <div class="form-in-wish-list-create-drawer">
+        <h2 class="title">Create a new wish list</h2>
+        <p>Create a wish list to save items you like, gift ideas and more.</p>
+        <form class="form-in-create-list-drawer">
+            <div class="input-in-create-list-drawer">
+                <p id="input-in-create-list-drawer-title">Wish list name</p>
+                <input type="text" placeholder="Wish list name" />
+            </div>
+            <div class="input-in-create-list-drawer">
+                <p>Wish list type</p>
+                <div class="list-type-in-drawer">
+                    <div>
+                        <input type="radio" name="type" value="Private" />
+                        <label for="Private">Private</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="type" value="Public" />
+                        <label for="Public">Public</label>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit"><p>Add List</p></button>
+                <button class="cancel-button"><p>Cancel</p></button>
+            </div>
+        </form>
+    </div>
+</div>
+<section class="book-product">
+    <div class="container">
+        <div class="book-product-image">
+            <img src="~/images/@Model.ImgUrl"  />
+        </div>
+        <div class="book-product-info">
+            <div class="book-product-info-left">
+                <div class="book-type">
+                    @if (Model.Book != null)
+                    {
+                        <div class="book-type-child ">
+                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@Model.Book.Id">
+                                <h2 class="book-type-child-title">@Model.Book.BType.Name.ToUpper()</h2>
+                                <p class="book-type-child-coast">$@Model.Book.Price</p>
+
+                            </a>
+                        </div>
+
+
+                    }
+                    @if (Model.ABook != null)
+                    {
+                        <div class="book-type-child ">
+                            <a asp-controller="abook" asp-action="detail" asp-route-id="@Model.ABook.Id">
+                                <h2 class="book-type-child-title">@Model.ABook.BType.Name.ToUpper()</h2>
+                                <p class="book-type-child-coast">$@Model.ABook.Price</p>
+                            </a>
+
+                        </div>
+                    }
+
+                    
+
+                    <!--
+                    Burada hansi page-dedirse hemin child-e selected class-i verilir
+                    yeni eger Book-un detailindedirse book
+                    olan child-a selected class-i verilir
+                    -->
+                    <div class="book-type-child selected">
+
+                        <h2 class="book-type-child-title">@Model.BType.Name.ToUpper()</h2>
+                        <p class="book-type-child-coast">$@Model.Price</p>
+
+
+                    </div>
+                </div>
+                <div class="book-description">
+                    <h2 class="title">@Model.Name</h2>
+                    <p class="description">
+                        @Model.Description
+                    </p>
+                    <p class="author-name">
+                        By :
+                        <a href="#">
+                            @foreach (var author in Model.EBookAuthor.Where(ab => ab.EBookId == Model.Id))
+                            {
+                                @(author.Author.Name + ",")
+                            }
+                        </a>
+                    </p>
+                </div>
+                <div class="about-book">
+                    <h4>About-Book</h4>
+                    <div class="about-book-info">
+                        <div class="book-pages">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <div class="info">
+                                <p>eBook</p>
+                                <p>304 pages</p>
+                            </div>
+                        </div>
+
+                        <div class="book-detail">
+                            <p><span>Published :</span> @Model.Released.ToString("dd MMMM yyyy")</p>
+                        </div>
+                    </div>
+                    <hr />
+                    @foreach (var author in Model.EBookAuthor.Where(ba => ba.EBookId == Model.Id))
+                    {
+                        <div class="share-this-book">
+                            <p>Find <a href="#" style="position:relative;z-index:2;">@author.Author.Name</a> :</p>
+                            <ul class="share-this-book-icon-list">
+                                <li>
+                                    <a href="@author.Author.SocialMedia.Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="@author.Author.SocialMedia.Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                                </li>
+                                <li>
+                                    <a href="@author.Author.SocialMedia.Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="book-product-info-right">
+                <div class="book-product-info-checkout-system">
+                    <h3>PAPERBACK</h3>
+                    <div class="cost">$@Model.Price</div>
+                    <div class="payment">
+                        <div class="buy-now">
+                            <a href="#">
+                                <p>BUY NOW <i class="fa-solid fa-cart-shopping"></i></p>
+                            </a>
+                        </div>
+                        <div class="add-to-wish-list">
+                            <a href="#" class="add-to-wish-list-btn">
+                                <p>Add to wish List<i class="fa-regular fa-heart"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="scroller-in-book-detail">
+    <div class="container">
+        <div class="title">
+            <h2><a href="##">More Books in Fitness & Diet</a></h2>
+            <a href="#"><p>See All</p></a>
+        </div>
+        <div class="scroller-book">
+            @foreach (var category in Model.EBookCategory.Where(bc => bc.EBookId == Model.Id))
+            {
+                <div class="scroller-book-child">
+                    <div class="slider-child-image">
+                        <a href="#">
+                            <img src="~/images/@category.EBook.ImgUrl" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="slider-child-info">
+                        <div class="slider-child-info-text">
+                            <h4>
+                                @foreach (var author in category.EBook.EBookAuthor.Where(ba => ba.EBookId == category.EBook.Id))
+                                {
+                                    @author.Author.Name
+                                }
+                            </h4>
+                            <p>@category.EBook.Price</p>
+                        </div>
+                        <div class="payment">
+                            <a href="#">
+                                <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroller-book-child">
+                <div class="slider-child-image">
+                    <a href="#">
+                        <img src="~/images/book-example4.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="slider-child-info">
+                    <div class="slider-child-info-text">
+                        <h4>Rachel Jonson</h4>
+                        <p>$32.55</p>
+                    </div>
+                    <div class="payment">
+                        <a href="#">
+                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let a = document.querySelector("html");
+    console.log(a.clientWidth);
+
+</script>

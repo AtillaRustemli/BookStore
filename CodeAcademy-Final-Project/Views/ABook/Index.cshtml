@@ -10,7 +10,7 @@
             @foreach (var book in Model.ABooks)
             {
                 <div class="new-releases-books-item">
-                    <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
+                    <a asp-controller="abook" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
                         <img src="~/images/@book.ImgUrl" style="width:100%;" />
                     </a>
                     <div class="checkout-in-book">
@@ -93,7 +93,7 @@
                         count++;
                         <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
 
-                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
+                            <a asp-controller="abook" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
                                 <img src="~/images/@book.ImgUrl" alt="" />
                             </a>
                             <div class="checkout-in-trending-now">
@@ -129,7 +129,7 @@
                         count++;
                         <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
 
-                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
+                            <a asp-controller="abook" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
                                 <img src="~/images/@book.ImgUrl" alt="" />
                             </a>
                             <div class="checkout-in-trending-now">
@@ -180,7 +180,7 @@
                 @foreach (var book in Model.ABooks.Take(10).OrderByDescending(b => b.PopularityCount))
                 {
                     <li>
-                        <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
+                        <a asp-controller="abook" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
                             <img src="~/images/@book.ImgUrl" alt="" />
                         </a>
                         <div>

@@ -65,7 +65,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("PromotionId")
+                    b.Property<int?>("PromotionId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -77,6 +78,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("WishListId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BTypeId");
@@ -85,13 +89,15 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("PromotionId");
 
+                    b.HasIndex("WishListId");
+
                     b.ToTable("ABooks");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            BTypeId = 2,
+                            BTypeId = 3,
                             Description = "This is book's description and there is nothing but description so good luck)",
                             ImgUrl = "book-example4.jpg",
                             LanguageId = 1,
@@ -100,7 +106,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 3, 15, 8, 14, 588, DateTimeKind.Local).AddTicks(4892),
+                            Released = new DateTime(2024, 1, 4, 21, 9, 6, 416, DateTimeKind.Local).AddTicks(6185),
                             SellCount = 0L
                         });
                 });
@@ -140,7 +146,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         {
                             Id = 1,
                             ABookId = 1,
-                            ABookUrl = ""
+                            ABookUrl = "Chapter1-audiobook.m4a"
                         });
                 });
 
@@ -239,7 +245,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("PromotionId")
+                    b.Property<int?>("PromotionId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -253,6 +260,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.Property<double>("Width")
                         .HasColumnType("float");
+
+                    b.Property<int?>("WishListId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -269,6 +279,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasIndex("LanguageId");
 
                     b.HasIndex("PromotionId");
+
+                    b.HasIndex("WishListId");
 
                     b.ToTable("Book");
 
@@ -289,7 +301,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 3, 15, 8, 14, 588, DateTimeKind.Local).AddTicks(5589),
+                            Released = new DateTime(2024, 1, 4, 21, 9, 6, 416, DateTimeKind.Local).AddTicks(7220),
                             SellCount = 0L,
                             Width = 15.1
                         });
@@ -381,6 +393,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("ABookId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BTypeId")
                         .HasColumnType("int");
 
@@ -416,7 +431,8 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("PromotionId")
+                    b.Property<int?>("PromotionId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -428,7 +444,14 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("WishListId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ABookId")
+                        .IsUnique()
+                        .HasFilter("[ABookId] IS NOT NULL");
 
                     b.HasIndex("BTypeId");
 
@@ -436,12 +459,15 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasIndex("PromotionId");
 
+                    b.HasIndex("WishListId");
+
                     b.ToTable("EBooks");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            ABookId = 1,
                             BTypeId = 2,
                             Description = "This is book's description and there is nothing but description so good luck)",
                             EBookUrl = "ardino.pdf",
@@ -451,7 +477,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 3, 15, 8, 14, 588, DateTimeKind.Local).AddTicks(6184),
+                            Released = new DateTime(2024, 1, 4, 21, 9, 6, 416, DateTimeKind.Local).AddTicks(8075),
                             SellCount = 0L
                         });
                 });
@@ -585,7 +611,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2024, 1, 3, 15, 8, 14, 588, DateTimeKind.Local).AddTicks(6633),
+                            EndTime = new DateTime(2024, 1, 4, 21, 9, 6, 416, DateTimeKind.Local).AddTicks(8586),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -1038,6 +1064,52 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.WishList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsMain")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsPrivate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WishList");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsMain = true,
+                            IsPrivate = true,
+                            Name = "Wish List"
+                        });
+                });
+
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.ABook", b =>
                 {
                     b.HasOne("CodeAcademy_Final_Project.Models.BType", "BType")
@@ -1058,11 +1130,17 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
+                        .WithMany("ABooks")
+                        .HasForeignKey("WishListId");
+
                     b.Navigation("BType");
 
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
+
+                    b.Navigation("WishList");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.ABookChapter", b =>
@@ -1115,6 +1193,10 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
+                        .WithMany("Books")
+                        .HasForeignKey("WishListId");
+
                     b.Navigation("ABook");
 
                     b.Navigation("BType");
@@ -1124,10 +1206,16 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
+
+                    b.Navigation("WishList");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.EBook", b =>
                 {
+                    b.HasOne("CodeAcademy_Final_Project.Models.ABook", "ABook")
+                        .WithOne("EBook")
+                        .HasForeignKey("CodeAcademy_Final_Project.Models.EBook", "ABookId");
+
                     b.HasOne("CodeAcademy_Final_Project.Models.BType", "BType")
                         .WithMany()
                         .HasForeignKey("BTypeId")
@@ -1146,11 +1234,19 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
+                        .WithMany("EBooks")
+                        .HasForeignKey("WishListId");
+
+                    b.Navigation("ABook");
+
                     b.Navigation("BType");
 
                     b.Navigation("Language");
 
                     b.Navigation("Promotion");
+
+                    b.Navigation("WishList");
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Genre", b =>
@@ -1351,6 +1447,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.Navigation("Book")
                         .IsRequired();
+
+                    b.Navigation("EBook")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CodeAcademy_Final_Project.Models.Author", b =>
@@ -1422,6 +1521,15 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 {
                     b.Navigation("Author")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CodeAcademy_Final_Project.Models.WishList", b =>
+                {
+                    b.Navigation("ABooks");
+
+                    b.Navigation("Books");
+
+                    b.Navigation("EBooks");
                 });
 #pragma warning restore 612, 618
         }
