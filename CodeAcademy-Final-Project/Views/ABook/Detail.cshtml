@@ -1,4 +1,4 @@
-﻿@model Book
+﻿@model ABook
 @{
     ViewData["CssLink"] = " /assets/css/book-detail.css";
     ViewData["JsSource"] = "/assets/js/book-detaila.js";
@@ -70,31 +70,35 @@
         <div class="book-product-info">
             <div class="book-product-info-left">
                 <div class="book-type">
-                    <div class="book-type-child selected">
-                        <h2 class="book-type-child-title">@Model.BType.Name.ToUpper()</h2>
-                        <p class="book-type-child-coast">$@Model.Price</p>
-                    </div>
-                    @if (Model.ABookId != null)
+                    @if (Model.Book != null)
                     {
-                        <div class="book-type-child">
+                    <div class="book-type-child ">
+                        <h2 class="book-type-child-title">@Model.Book.BType.Name.ToUpper()</h2>
+                        <p class="book-type-child-coast">$@Model.Book.Price</p>
+                    </div>
+
+                    
+                        }
+                    
+                        <div class="book-type-child selected">
                             <a href="#">
-                                <h2 class="book-type-child-title">@Model.ABook.BType.Name.ToUpper()</h2>
-                                <p class="book-type-child-coast">$@Model.ABook.Price</p>
+                                <h2 class="book-type-child-title">@Model.BType.Name.ToUpper()</h2>
+                                <p class="book-type-child-coast">$@Model.Price</p>
 
                             </a>
                         </div>
-                    }
+                    
                     <!--
                     Burada hansi page-dedirse hemin child-e selected class-i verilir
                     yeni eger Book-un detailindedirse book
                     olan child-a selected class-i verilir
                     -->
-                    @if (Model.EBookId != null)
+                    @if (Model.Book.EBook != null)
                     {
                         <div class="book-type-child ">
                             <a href="#">
-                                <h2 class="book-type-child-title">@Model.EBook.BType.Name.ToUpper()</h2>
-                                <p class="book-type-child-coast">$@Model.EBook.Price</p>
+                                <h2 class="book-type-child-title">@Model.Book.EBook.BType.Name.ToUpper()</h2>
+                                <p class="book-type-child-coast">$@Model.Book.EBook.Price</p>
                             </a>
                          
                         </div>
@@ -107,7 +111,7 @@
                     </p>
                     <p class="author-name">By : 
                         <a href="#">
-                            @foreach (var author in Model.BookAuthor.Where(ab => ab.BookId == Model.Id))
+                            @foreach (var author in Model.ABookAuthor.Where(ab => ab.ABookId == Model.Id))
                             {
                                 @(author.Author.Name+",")
                             }
@@ -117,25 +121,19 @@
                     <h4>About-Book</h4>
                     <div class="about-book-info">
                         <div class="book-pages">
-                            <i class="fa-solid fa-book-open"></i>
+                            <i class="fa-regular fa-file"></i>
                             <div class="info">
-                                <p>paperback</p>
+                                <p>eBook</p>
                                 <p>304 pages</p>
                             </div>
                         </div>
-                        <div class="book-size">
-                            <i class="fa-solid fa-book"></i>
-                            <div class="info">
-                                <p>Dimensions</p>
-                                <p>@Model.Height x @Model.Width x @Model.Length</p>
-                            </div>
-                        </div>
+                       
                         <div class="book-detail">
                             <p><span>Published :</span> @Model.Released.ToString("dd MMMM yyyy")</p>
                         </div>
                     </div>
                     <hr />
-                    @foreach (var author in Model.BookAuthor.Where(ba=>ba.BookId==Model.Id))
+                    @foreach (var author in Model.ABookAuthor.Where(ba=>ba.ABookId==Model.Id))
                     {
                         <div class="share-this-book">
                             <p>Find <a href="#" style="position:relative;z-index:2;">@author.Author.Name</a> :</p>
@@ -183,24 +181,24 @@
             <a href="#"><p>See All</p></a>
         </div>
         <div class="scroller-book">
-            @foreach (var category in Model.BookCategory.Where(bc=>bc.BookId==Model.Id))
+            @foreach (var category in Model.ABookCategory.Where(bc=>bc.ABookId==Model.Id))
             {
             <div class="scroller-book-child">
                 <div class="slider-child-image">
                     <a href="#">
-                        <img src="~/images/@category.Book.ImgUrl" alt="" />
+                        <img src="~/images/@category.ABook.ImgUrl" alt="" />
                     </a>
                 </div>
 
                 <div class="slider-child-info">
                     <div class="slider-child-info-text">
                         <h4>
-                                @foreach (var author in category.Book.BookAuthor.Where(ba => ba.BookId == category.Book.Id))
+                                @foreach (var author in category.ABook.ABookAuthor.Where(ba => ba.ABookId == category.ABook.Id))
                              {
                                    @author.Author.Name
                                 }
                         </h4>
-                        <p>@category.Book.Price</p>
+                        <p>@category.ABook.Price</p>
                     </div>
                     <div class="payment">
                         <a href="#">

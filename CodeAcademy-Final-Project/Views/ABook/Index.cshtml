@@ -1,0 +1,281 @@
+﻿@model ABookHomeVM
+
+@{
+    ViewData["CssLink"] = " /assets/css/book.css";
+    int count = 0;
+}
+<section class="new-releases">
+    <div class="container">
+        <div class="new-releases-books" style="display:flex;justify-content:space-between;">
+            @foreach (var book in Model.ABooks)
+            {
+                <div class="new-releases-books-item">
+                    <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
+                        <img src="~/images/@book.ImgUrl" style="width:100%;" />
+                    </a>
+                    <div class="checkout-in-book">
+                        <span class="value">$@book.Price</span>
+                        <a href="#">
+                            <span class="checkout-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+
+            }
+        </div>
+        <div class="new-releases-btn">
+            <button><a href="#">View All New Releases</a></button>
+        </div>
+    </div>
+</section>
+<section class="discover-more">
+    <div class="container">
+        <h2>Discover More</h2>
+        <ul class="discover-me-icon-list">
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-star" style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-tag" style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-brands fa-tiktok" style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-arrow-up-wide-short"
+                           style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-hashtag" style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-gift" style="color: #ffffff"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="trending-now">
+    <div class="container">
+        <div class="trending-now-left">
+            <div class="first">
+                <h2>
+                    <a href="#"> <span>Trending</span> in Books</a>
+                </h2>
+
+                <ul class="trending-now-books">
+                    @foreach (var book in Model.ABooks.Where(b => b.Released >= DateTime.Now.AddMonths(-3)).Take(6).OrderByDescending(b => b.Id))
+                    {
+                        count++;
+                        <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
+
+                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
+                                <img src="~/images/@book.ImgUrl" alt="" />
+                            </a>
+                            <div class="checkout-in-trending-now">
+                                <span>$@book.Price</span>
+                                <a href="##">
+                                    <span class="checkout-icon">
+                                        <i class="fa-solid fa-cart-shopping"
+                                           style="color: #ffffff"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+
+                    }
+                    @{
+                        count = 0;
+                    }
+                </ul>
+                <div class="trending-now-left-bottom-link">
+                    <a href="#">
+                        See all New releases <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="second">
+                <h2>
+                    <a href="#"> <span>Hot Pre-Orders</span> in Books</a>
+                </h2>
+
+                <ul class="trending-now-books">
+                    @foreach (var book in Model.ABooks.Where(b => b.ABookCategory.Any(bc => bc.CategoryId == 2)).Take(6).OrderByDescending(b => b.Id))
+                    {
+                        count++;
+                        <li @(count == 1 ? "id = trending-now-first-child" : count == 6 ? "" : "class=trending-now-center-book ")>
+
+                            <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1" class="trending-now-book-link">
+                                <img src="~/images/@book.ImgUrl" alt="" />
+                            </a>
+                            <div class="checkout-in-trending-now">
+                                <span>$@book.Price</span>
+                                <a href="##">
+                                    <span class="checkout-icon">
+                                        <i class="fa-solid fa-cart-shopping"
+                                           style="color: #ffffff"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+
+                    }
+                    @{
+                        count = 0;
+                    }
+                </ul>
+                <div class="trending-now-left-bottom-link">
+                    <a href="#">
+                        View all Hot-Pre Orders
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="trending-now-form">
+                <h2 class="trending-now-form-title">Search for TextBook</h2>
+                <form>
+                    <input type="text" placeholder="Search by textbook name" />
+                    <div class="trending-now-form-radios">
+                        <input type="radio" name="group-trending-now" id="Textbook" />
+                        <label for="Textbook">Textbook</label>
+                        <input type="radio" name="group-trending-now" id="eText" />
+                        <label for="eText">eText</label>
+                    </div>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"
+                           style="color: #ffffff"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="trending-now-right">
+            <div class="trending-now-right-title">Best Selling Books</div>
+            <ol type="1" class="best-sellers">
+                @foreach (var book in Model.ABooks.Take(10).OrderByDescending(b => b.PopularityCount))
+                {
+                    <li>
+                        <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id" asp-route-typeId="1">
+                            <img src="~/images/@book.ImgUrl" alt="" />
+                        </a>
+                        <div>
+                            <h4>
+                                <a href="#">@book.Name</a>
+                            </h4>
+                            <p>
+                                By : @foreach(var author in book.ABookAuthor.Where(ab => ab.ABookId == book.Id))
+                            {
+                            @author.Author.Name
+                            }
+                            </p>
+                        </div>
+                    </li>
+
+                }
+            </ol>
+            <a href="#" class="view-all-best-sellers">View All</a>
+        </div>
+    </div>
+</section>
+<section class="popular-categories-in-books">
+    <div class="container">
+        <ul class="popular-categories-in-books-list">
+            @foreach (var category in Model.Categories)
+            {
+                if (!category.ABookCategory.Any())
+                {
+                    continue;
+                }
+                <li>
+                    <div class="popular-categories-in-books-list-images">
+                        <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
+                             @foreach (var book in category.ABookCategory.Take(3))
+                        {
+                        count++;
+                        <img src="~/images/@book.ABook.ImgUrl" class="@(count==2?"center-image":"")" alt="" />
+
+                        }
+                            @{
+                                count = 0;
+                            }
+                        </a>
+                    </div>
+                    <div class="category-name">
+                        <a href="#">
+                            <h2>@category.Name</h2>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+<section class="promotions">
+    <div class="container">
+        <h2>Promotions</h2>
+        <div class="promotions-inner">
+            @foreach (var promotions in Model.Promotions)
+            {
+                <div class="promotions-inner-item">
+                    <a asp-controller="promotions" asp-action="detail" asp-route-id="@promotions.Id">
+                        <img class="promotion-image"
+                             src="~/images/promotion-image1.jpg"
+                             alt="" />
+
+                        <div class="promotion-inner-text">
+                            <h4>@promotions.Title</h4>
+
+                            <p>
+                                @if (promotions.Description.Length >= 40)
+                                {
+                                    @(promotions.Description.Substring(0, 40) + "...")
+                                }
+                                else
+                                {
+                                    @promotions.Description
+                                }
+                            </p>
+                            <div class="promotion-hover">
+                                <p>
+                                    @promotions.Description
+                                </p>
+                            </div>
+
+                            <div class="promotion-end-time">
+                                <p>@promotions.EndTime.ToString("HH:mm dddd, dd MMMM")</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+
+        </div>
+        <a class="promotion-view-all" asp-controller="promotions" asp-action="index"><p>View All Promotions</p></a>
+    </div>
+</section>

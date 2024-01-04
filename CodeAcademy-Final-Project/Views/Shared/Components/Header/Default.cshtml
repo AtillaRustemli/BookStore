@@ -78,8 +78,8 @@
         </div>
         <ul class="nav-list">
             <li><a asp-controller="bookhome" asp-action="index">Book</a></li>
-            <li><a href="#">EBook</a></li>
-            <li><a href="#">AudioBook</a></li>
+            <li><a asp-controller="Ebook" asp-action="index">EBook</a></li>
+            <li><a asp-controller="Abook" asp-action="index">AudioBook</a></li>
             <li><a href="#">Promotions</a></li>
             <li><a href="#">Magazines</a></li>
             <li><a href="#">Stationary</a></li>
@@ -101,9 +101,9 @@
         </button>
     </div>
     <ul class="drawer-nav-list">
-        <li><a href="#">Book</a></li>
+        <li><a asp-controller="bookhome" asp-action="index">Book</a></li>
         <li><a href="#">EBook</a></li>
-        <li><a href="#">AudioBook</a></li>
+        <li><a asp-controller="Abook" asp-action="index">AudioBook</a></li>
         <li><a href="#">Games&Puzzles</a></li>
         <li><a href="#">Magazines</a></li>
         <li><a href="#">Stationary</a></li>

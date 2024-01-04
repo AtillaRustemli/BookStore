@@ -19,7 +19,7 @@
         public BType BType { get; set; }
         public int LanguageId { get; set; }
         public Language Language { get; set; }
-        public int PromotionId { get; set; }
+        public int? PromotionId { get; set; }
         public Promotion Promotion { get; set; }
     }
 }

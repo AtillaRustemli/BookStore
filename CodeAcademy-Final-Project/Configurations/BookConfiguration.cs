@@ -48,7 +48,9 @@ namespace CodeAcademy_Final_Project.Configurations
                     Width=15.1,
                     Height=5.4,
                     Length=20.3,
-                    PageCount=304
+                    PageCount=304,
+                    ABookId=1,
+                    EBookId=1,
 
                 }
                 );

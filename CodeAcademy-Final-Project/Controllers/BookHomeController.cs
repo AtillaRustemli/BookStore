@@ -20,7 +20,6 @@ namespace CodeAcademy_Final_Project.Controllers
             vm.Books=_context.Book
                 .Include(b => b.BookAuthor)
                 .ThenInclude(ba => ba.Author)
-                .Where(b=>b.BTypeId==1)
                 .Include(b => b.BookCategory)
                 .ToList();
             vm.Categories=_context.Categories
@@ -36,6 +35,12 @@ namespace CodeAcademy_Final_Project.Controllers
         {
             if (id == null) return NotFound();
             var book = _context.Book
+                .Include(b => b.BookCategory)
+                .Include(b => b.ABook)
+                .ThenInclude(ab=>ab.BType)
+                .Include(b => b.EBook)
+                .ThenInclude(eb => eb.BType)
+                .Include (b => b.BType)
                 .Include(b=>b.BookAuthor)
                 .ThenInclude(ba => ba.Author)
                 .ThenInclude(a=>a.SocialMedia)

@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/ABook/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUJvb2tcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/ABook/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUJvb2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

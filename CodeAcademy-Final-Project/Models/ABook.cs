@@ -6,6 +6,7 @@ namespace CodeAcademy_Final_Project.Models
     {
         public List<ABookChapter> ABookChapters { get; set; }
         public string Narrator { get; set; }
+        public Book Book { get; set; }
         public List<ABookAuthor> ABookAuthor { get; set; }
         public List<ABookGenre> ABookGenre { get; set; }
         public List<ABookCategory> ABookCategory { get; set; }

@@ -12,6 +12,10 @@ namespace CodeAcademy_Final_Project.Models
         public List<BookAuthor> BookAuthor { get; set; }
         public List<BookGenre> BookGenre { get; set; }
         public List<BookCategory> BookCategory { get; set; }
+        public int? EBookId { get; set; }
+        public EBook EBook { get; set; }
+        public int? ABookId { get; set; }
+        public ABook ABook { get; set; }
 
     }
 }
