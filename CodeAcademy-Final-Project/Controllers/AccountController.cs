@@ -1,5 +1,6 @@
 ﻿using CodeAcademy_Final_Project.DAL;
 using CodeAcademy_Final_Project.Models;
+using CodeAcademy_Final_Project.Services.AccountServices;
 using CodeAcademy_Final_Project.ViewModels.AccountVM;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,15 +13,17 @@ namespace CodeAcademy_Final_Project.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly AppDbContext _context;
+        private readonly IAccountService _accountService;
 
 
 
-        public AccountController(UserManager<AppUser> userManager, AppDbContext appDbContext, RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager, AppDbContext appDbContext, RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager, IAccountService accountService)
         {
             _userManager = userManager;
             _context = appDbContext;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _accountService = accountService;
         }
 
         public IActionResult Register()
@@ -58,6 +61,8 @@ namespace CodeAcademy_Final_Project.Controllers
             loginVM.UserNameOrEmail= registerVM.UserName;
             loginVM.Password = registerVM.Password;
 
+
+
             await _userManager.AddToRoleAsync(user, role.ToString());
             await _userManager.UpdateAsync(user);
             _context.SaveChanges();
@@ -75,39 +80,27 @@ namespace CodeAcademy_Final_Project.Controllers
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Login(LoginVM loginVM, string ReturnUrl)
+        public async Task<IActionResult> Login(LoginVM loginVM, string? ReturnUrl)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
             if (loginVM == null) return View();
+            var serviceRespond=await _accountService.LoginService(loginVM);
             var user = await _userManager.FindByEmailAsync(loginVM.UserNameOrEmail);
-            if ( user== null)
+            if (!serviceRespond.Success)
             {
-                user=await _userManager.FindByNameAsync(loginVM.UserNameOrEmail);
-                if (user == null)
-                {
-                    ModelState.AddModelError("UserNameOrEmail", "UserNameOrEmail sehvdir!");
-                    return View();
-                }
+                ModelState.AddModelError(serviceRespond.Key, serviceRespond.ErrorMessage);
+                return View();
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.RemeberMe, true);
-            if (result.IsLockedOut)
-            {
-                ModelState.AddModelError("", "Heabiniz blokanib!");
-            }
-            if (!result.Succeeded)
-            {
-                ModelState.AddModelError("", "Password is wrong!");
-            }
-            await _signInManager.SignInAsync(user, true);
+          
             if (ReturnUrl != null)
             {
                 Redirect(ReturnUrl);
             }
-            var role = await _userManager.GetRolesAsync(user);
+          
             //foreach (var item in role)
             //{
             //    if (item == "Admin" && user.EmailConfirmed) return RedirectToAction("index", "dashboard", new { area = "AdminArea" });
