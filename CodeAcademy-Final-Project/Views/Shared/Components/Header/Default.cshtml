@@ -30,10 +30,34 @@
                             <i class="fa-regular fa-heart" style="color: #ffffff"></i>
                             <span> My Wish Lists</span>
                         </a>
-                        <a href="../Pages/Login.html">
-                            <i class="fa-regular fa-user" style="color: #ffffff"></i>
-                            <span>Login/ Join</span>
-                        </a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a>
+                                <i class="fa-regular fa-user" style="color: #ffffff"></i>
+                                <span>@User.Identity.Name</span>
+                            </a>
+                            <a asp-controller="account" asp-action="logout" >
+                                <i class="fa-regular fa-user" style="color: #ffffff"></i>
+                                <span>Logout</span>
+                            </a>
+                            @if (User.IsInRole("Admin"))
+                            {
+
+                                <a asp-area="AdminArea" asp-controller="dashboard" asp-action="index">
+                                    <i class="fa-regular fa-user" style="color: #ffffff"></i>
+                                    <span>AdminPanel</span>
+                                </a>
+                            }
+                        }
+                        else
+                        {
+                            <a asp-controller="account" asp-action="login">
+                                <i class="fa-regular fa-user" style="color: #ffffff"></i>
+                                <span>Login/ Join</span>
+                            </a>
+                        
+                        }
+
                     </div>
                 </div>
             </div>
@@ -120,7 +144,7 @@
                 <i class="fa-regular fa-heart" style="color: #000000"></i>
                 <span> My Wish Lists</span>
             </a>
-            <a href="../Pages/Login.html">
+            <a asp-controller="account" asp-action="login">
                 <i class="fa-regular fa-user" style="color: #000000"></i>
                 <span>Login/ Join</span>
             </a>

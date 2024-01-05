@@ -17,15 +17,6 @@ namespace CodeAcademy_Final_Project.Configurations
             builder.Property(wl => wl.IsMain)
                 .IsRequired()
                 .HasDefaultValue(false);
-            builder.HasData(
-                new WishList
-                {
-                    Id=1,
-                    Name= "Wish List",
-                    IsPrivate=true,
-                    IsMain=true,
-                }
-                );
         }
     }
 }

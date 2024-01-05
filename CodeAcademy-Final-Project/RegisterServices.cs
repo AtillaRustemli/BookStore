@@ -1,6 +1,8 @@
 ﻿using CodeAcademy_Final_Project.DAL;
 using CodeAcademy_Final_Project.Helpers.ErrorDescriber;
 using CodeAcademy_Final_Project.Models;
+using CodeAcademy_Final_Project.Services.AccountServices;
+using CodeAcademy_Final_Project.Services.EmailService;
 using CodeAcademy_Final_Project.Validators.AccountValidators;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
@@ -35,6 +37,13 @@ namespace CodeAcademy_Final_Project
                .AddDefaultTokenProviders()
                .AddEntityFrameworkStores<AppDbContext>()
                .AddErrorDescriber<CustomIdentityErrorDescriber>();
+
+
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IEmailService, EmailService>();
+
+
+
         }
     }
 }

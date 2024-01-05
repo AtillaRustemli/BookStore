@@ -489,7 +489,7 @@ header {
 }
 
 .header-in-scroll {
-    display:none !important;
+    display:flex;
     position: fixed;
     transform: translateY(-100%);
     transition: .3s linear;

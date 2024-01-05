@@ -1,0 +1,44 @@
+﻿@model LoginVM
+@{
+    ViewData["CssLink"] = " /assets/css/login-signup.css";
+}
+
+
+<div class="login">
+    <div class="title">
+        <h2>Login</h2>
+        <p>Login to our website</p>
+    </div>
+    <div class="form-in-login">
+        <form method="post" asp-controller="account" asp-action="Login">
+            <div>
+                <input asp-for="UserNameOrEmail" placeholder="Username or Email" />
+                <span asp-validation-for="UserNameOrEmail" style="color:red;"></span>
+            </div>
+            <div>
+                <input asp-for="Password" type="password" placeholder="Enter your Password" />
+                <span asp-validation-for="Password" style="color:red;"></span>
+                <button class="create-account" type="submit" asp-controller="account" asp-action="Login">Login</button>
+                <div class="forget-password-remember-me">
+                    <div>
+                        <input asp-for="RemeberMe" id="remember" />
+                        <label for="remember">Remember me</label>
+                    </div>
+
+                    <a href="##">Forget Password?</a>
+                </div>
+                <div class="create-one-in-login">
+                    <p>
+                        Don't have an account?
+                        <a asp-controller="account" asp-action="register">Create One </a>
+                    </p>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
