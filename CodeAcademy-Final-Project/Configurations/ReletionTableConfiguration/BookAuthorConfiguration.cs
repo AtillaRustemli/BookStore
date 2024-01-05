@@ -8,7 +8,7 @@ namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
     {
         public void Configure(EntityTypeBuilder<BookAuthor> builder)
         {
-            builder.Property(b => b.BookId).IsRequired();
+           
             builder.Property(b => b.AuthorId).IsRequired();
             builder.HasData(
                  new BookAuthor

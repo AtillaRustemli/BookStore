@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Book/CheckExcistence.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXEJvb2tcQ2hlY2tFeGNpc3RlbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Book/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXEJvb2tcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXEJvb2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,12 +70,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Author/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0hvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/EBook/Detail.cshtml]

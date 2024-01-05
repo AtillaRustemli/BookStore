@@ -1,0 +1,245 @@
+﻿@model Author
+
+@{
+    ViewData["CssLink"] = " /assets/css/author.css";
+    ViewData["JsSource"] = "/assets/js/author.js";
+}
+
+
+
+<section class="result-for-author">
+    <div class="container">
+        <div class="title">
+            <h4>Results For Author @Model.Name</h4>
+        </div>
+        <div class="author-inner">
+            <div class="author-inner-left">
+                <div class="top">
+                    <h4>Refine your Results</h4>
+                    <div class="refine-open-btn">
+                        <p><i class="fa-solid fa-angle-down"></i></p>
+                    </div>
+                    <div class="refine-cancel-btn">
+                        <p><i class="fa-solid fa-angle-up"></i></p>
+                    </div>
+                </div>
+                <div class="refine">
+                    <div class="category-refine">
+                        <div class="refine-title">
+                            <p>Category</p>
+                        </div>
+                        <ul class="refine-child-list">
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#" id="atilla2">Atilla2(1)</a>
+                            </li>
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#">Salam(2)</a>
+                            </li>
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#">Sagol(4)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category-refine">
+                        <div class="refine-title">
+                            <p>Genre</p>
+                        </div>
+                        <ul class="refine-child-list">
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#" id="atilla2">Atilla2(1)</a>
+                            </li>
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#">Salam(2)</a>
+                            </li>
+                            <li class="refine-child-list-item"
+                                onclick="selectedRefine(this)">
+                                <a href="#">Sagol(4)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-refine">
+                        <div class="refine-title">
+                            <p>Price</p>
+                        </div>
+                        <form id="costForm">
+                            <ul class="refine-child-list">
+                                <li onclick="selectedRefine(this)">
+                                    <label> <input type="radio" name="cost" />0-20$ </label>
+                                </li>
+                                <li onclick="selectedRefine(this)">
+                                    <label>
+                                        <input type="radio" name="cost" />20-40$
+                                    </label>
+                                </li>
+                                <li onclick="selectedRefine(this)">
+                                    <label> <input type="radio" name="cost" />40$+ </label>
+                                </li>
+                                <li onclick="selectedRefine(this)">
+                                    <label>
+                                        <input type="radio" name="cost" />All Cost
+                                    </label>
+                                </li>
+                            </ul>
+                            <button id="hidden-submit-button"
+                                    type="submit"
+                                    style="display: none"></button>
+                        </form>
+                    </div>
+                    <div class="language-refine">
+                        <div class="refine-title">
+                            <p>Book Language:</p>
+                        </div>
+                        <form>
+                            <div>
+                                <select name="" id="">
+                                    <option value="Azerbaijani">Azerbaijani</option>
+                                    <option value="Turkish">Turkish</option>
+                                    <option value="English">English</option>
+                                    <option value="Russian">Russian</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="author-inner-right">
+                <ul class="book-type">
+                    <li onclick="selectedBookType(this)">
+                        <a href="#">
+                            <span class="type">Book</span><br />
+                            <span>(3)</span>
+                        </a>
+                    </li>
+                    <li onclick="selectedBookType(this)">
+                        <a href="#">
+                            <span class="type">eBook</span><br />
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="book-sort-by">
+                    <div class="title-sort-by">Sort by:</div>
+                    <div class="sort-by">
+                        <a href="#" id="first-one">Price High to Law</a>
+                        <a href="#">Price Law to High</a>
+                    </div>
+                </div>
+                <ul class="book-in-author">
+                    @foreach (var book in Model.ABookAuthor.Where(ba=>ba.AuthorId==Model.Id))
+                    {
+                    <li>
+                        <div class="img-of-book-in-author">
+                            <a href="#">
+                                <img src="~/images/@book.ABook.ImgUrl" alt="" />
+                            </a>
+                        </div>
+                        <div class="inner-description">
+                            <div class="book-name">
+                                    <p>@book.ABook.Name</p>
+                            </div>
+                            <div class="author-name">
+                                <a href="#"><p>@Model.Name</p></a>
+                            </div>
+                            <div class="book-type">
+                                <p>
+                                        <i class="fa-solid fa-mobile-screen-button"></i>@book.ABook.BType.Name
+                                </p>
+                                <!--   <p><i class="fa-solid fa-book"></i>Book</p> -->
+                            </div>
+                        </div>
+                        <div class="checkout">
+                                <p>$@book.ABook.Price</p>
+                            <div>
+                                <a href="#">
+                                    <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                                </a>
+                                <a href="#" class="wish-list">
+                                    <p><i class="fa-solid fa-heart"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    }
+                    @foreach (var book in Model.EBookAuthor.Where(ba=>ba.AuthorId==Model.Id))
+                    {
+                    <li>
+                        <div class="img-of-book-in-author">
+                            <a href="#">
+                                <img src="~/images/@book.EBook.ImgUrl" alt="" />
+                            </a>
+                        </div>
+                        <div class="inner-description">
+                            <div class="book-name">
+                                    <p>@book.EBook.Name</p>
+                            </div>
+                            <div class="author-name">
+                                <a href="#"><p>@Model.Name</p></a>
+                            </div>
+                            <div class="book-type">
+                                <p>
+                                        <i class="fa-solid fa-mobile-screen-button"></i>@book.EBook.BType.Name
+                                </p>
+                                <!--   <p><i class="fa-solid fa-book"></i>Book</p> -->
+                            </div>
+                        </div>
+                        <div class="checkout">
+                                <p>$@book.EBook.Price</p>
+                            <div>
+                                <a href="#">
+                                    <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                                </a>
+                                <a href="#" class="wish-list">
+                                    <p><i class="fa-solid fa-heart"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    }
+                    @foreach (var book in Model.BookBaseAuthor.Where(ba=>ba.AuthorId==Model.Id))
+                    {
+                    <li>
+                        <div class="img-of-book-in-author">
+                            <a href="#">
+                                <img src="~/images/@book.Book.ImgUrl" alt="" />
+                            </a>
+                        </div>
+                        <div class="inner-description">
+                            <div class="book-name">
+                                    <p>@book.Book.Name</p>
+                            </div>
+                            <div class="author-name">
+                                <a href="#"><p>@Model.Name</p></a>
+                            </div>
+                            <div class="book-type">
+                                <p>
+                                        <i class="fa-solid fa-book"></i>@book.Book.BType.Name
+                                </p>
+                                <!--   <p>Book</p> -->
+                            </div>
+                        </div>
+                        <div class="checkout">
+                                <p>$@book.Book.Price</p>
+                            <div>
+                                <a href="#">
+                                    <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
+                                </a>
+                                <a href="#" class="wish-list">
+                                    <p><i class="fa-solid fa-heart"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

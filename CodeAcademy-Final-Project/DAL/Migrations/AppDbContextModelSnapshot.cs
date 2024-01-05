@@ -66,7 +66,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasColumnType("float");
 
                     b.Property<int?>("PromotionId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -106,7 +105,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 683, DateTimeKind.Local).AddTicks(9583),
+                            Released = new DateTime(2024, 1, 7, 23, 32, 6, 552, DateTimeKind.Local).AddTicks(2241),
                             SellCount = 0L
                         });
                 });
@@ -246,7 +245,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasColumnType("float");
 
                     b.Property<int?>("PromotionId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -301,7 +299,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(613),
+                            Released = new DateTime(2024, 1, 7, 23, 32, 6, 552, DateTimeKind.Local).AddTicks(3020),
                             SellCount = 0L,
                             Width = 15.1
                         });
@@ -432,7 +430,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasColumnType("float");
 
                     b.Property<int?>("PromotionId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Released")
@@ -477,7 +474,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(1491),
+                            Released = new DateTime(2024, 1, 7, 23, 32, 6, 552, DateTimeKind.Local).AddTicks(3673),
                             SellCount = 0L
                         });
                 });
@@ -611,7 +608,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(2042),
+                            EndTime = new DateTime(2024, 1, 7, 23, 32, 6, 552, DateTimeKind.Local).AddTicks(4219),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -755,7 +752,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("BookId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedAt")
@@ -793,7 +789,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("BookId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
@@ -834,7 +829,6 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("BookId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedAt")
@@ -1136,22 +1130,22 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0b796b37-bc35-4c39-90e4-e97b0616124b",
-                            ConcurrencyStamp = "cf5e4f56-2918-49c6-8bff-95117f7d69f6",
+                            Id = "b5baa6d3-0d99-40a7-bd92-c5d497b66119",
+                            ConcurrencyStamp = "b4c7c7d5-eb78-448b-ba70-e5839750a0b0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "e07de3ef-5676-4ec8-9bf5-14fa223655ba",
-                            ConcurrencyStamp = "450413ea-900a-4dfe-91c1-dd715893c76b",
+                            Id = "78345004-8a73-43b6-b46a-68434dde6d08",
+                            ConcurrencyStamp = "6ed4d670-7c47-4797-a81a-607e7c215c61",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
-                            Id = "5754234e-dbc1-4ae5-8d0d-89ead5ccad7a",
-                            ConcurrencyStamp = "4774c4ec-f440-4b7d-81b4-f978d37f178f",
+                            Id = "692625ce-a64e-4b7f-94d0-0ab714047f87",
+                            ConcurrencyStamp = "e78f2076-e67d-4e0d-925b-a65ecf88c155",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });
@@ -1361,9 +1355,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Promotion", "Promotion")
                         .WithMany()
-                        .HasForeignKey("PromotionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PromotionId");
 
                     b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
                         .WithMany("ABooks")
@@ -1424,9 +1416,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Promotion", "Promotion")
                         .WithMany("Books")
-                        .HasForeignKey("PromotionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PromotionId");
 
                     b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
                         .WithMany("Books")
@@ -1465,9 +1455,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Promotion", "Promotion")
                         .WithMany()
-                        .HasForeignKey("PromotionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PromotionId");
 
                     b.HasOne("CodeAcademy_Final_Project.Models.WishList", "WishList")
                         .WithMany("EBooks")
@@ -1566,9 +1554,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
                         .WithMany("BookAuthor")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.Navigation("Author");
 
@@ -1579,9 +1565,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 {
                     b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
                         .WithMany("BookCategory")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Category", "Category")
                         .WithMany("BookBaseCategory")
@@ -1598,9 +1582,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 {
                     b.HasOne("CodeAcademy_Final_Project.Models.Book", "Book")
                         .WithMany("BookGenre")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.HasOne("CodeAcademy_Final_Project.Models.Genre", "Genre")
                         .WithMany("BookBaseGenre")

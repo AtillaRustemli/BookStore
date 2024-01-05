@@ -26,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\BookValidator\" />
     <Folder Include="wwwroot\AudioBooks\" />
     <Folder Include="wwwroot\eBooks\" />
   </ItemGroup>

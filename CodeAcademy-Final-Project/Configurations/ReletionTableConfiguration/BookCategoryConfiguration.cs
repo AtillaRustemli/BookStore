@@ -8,7 +8,6 @@ namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
     {
         public void Configure(EntityTypeBuilder<BookCategory> builder)
         {
-            builder.Property(bc => bc.BookId).IsRequired();
             builder.Property(bc => bc.CategoryId).IsRequired();
          
 

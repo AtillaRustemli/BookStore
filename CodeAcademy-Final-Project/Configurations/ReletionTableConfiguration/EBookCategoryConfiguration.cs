@@ -9,7 +9,6 @@ namespace CodeAcademy_Final_Project.Configurations.ReletionTableConfiguration
 
         public void Configure(EntityTypeBuilder<EBookCategory> builder)
         {
-            builder.Property(b => b.EBookId).IsRequired();
             builder.Property(b => b.CategoryId).IsRequired();
             builder.HasData(
                  new EBookCategory
