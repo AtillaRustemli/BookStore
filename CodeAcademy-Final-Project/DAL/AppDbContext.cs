@@ -30,6 +30,7 @@ namespace CodeAcademy_Final_Project.DAL
         public List<EBookAuthor> EBookBaseAuthor { get; set; }
         public List<EBookGenre> EBookBaseGenre { get; set; }
         public DbSet<EBookCategory> EBookBaseCategory { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
 
         public override int SaveChanges()
         {

@@ -1,6 +1,7 @@
 ﻿using CodeAcademy_Final_Project.DAL;
 using CodeAcademy_Final_Project.Helpers.ErrorDescriber;
 using CodeAcademy_Final_Project.Models;
+using CodeAcademy_Final_Project.Models.EmailModel;
 using CodeAcademy_Final_Project.Services.AccountServices;
 using CodeAcademy_Final_Project.Services.EmailService;
 using CodeAcademy_Final_Project.Validators.AccountValidators;
@@ -38,7 +39,8 @@ namespace CodeAcademy_Final_Project
                .AddEntityFrameworkStores<AppDbContext>()
                .AddErrorDescriber<CustomIdentityErrorDescriber>();
 
-
+            services.Configure<EmailConfig>(config.GetSection(nameof(EmailConfig)));
+            services.AddScoped<EmailConfig>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IEmailService, EmailService>();
 

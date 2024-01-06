@@ -18,6 +18,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\MSI\OneDrive\Desktop\Final\CodeAcademy-Final-Project\CodeAcademy-Final-Project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXEJvb2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNoYXJlZFxfQWRtaW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Areas/AdminArea/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/ABook/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUJvb2tcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,12 +46,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUJvb2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Account/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/OneDrive/Desktop/Final/CodeAcademy-Final-Project/CodeAcademy-Final-Project/Views/BookHome/Detail.cshtml]

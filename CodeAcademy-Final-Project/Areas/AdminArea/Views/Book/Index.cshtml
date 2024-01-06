@@ -1,0 +1,56 @@
+﻿@model List<Book>
+
+<div class="container" style="width:80%;display:flex;justify-content:flex-end;" >
+    <div class="row" style="width:90%">
+
+       
+
+        <table class="table" style="width:90%;">
+            <div class="input-group" style="width:70%;margin:50px auto 0px;">
+                <div style="margin-right:20px">
+                    <a asp-controller="book" asp-action="Create" class="btn btn-outline-success d-flex" style="height:50px;align-self:start;align-items:center;justify-content:center">
+                        Add new Book
+                    </a>
+                </div>
+                <form method="post" asp-controller="book" asp-action="index">
+                    <div style="width:70%;display;flex;" id="search-autocomplete" data-mdb-input-init>
+                        <input style="height:50px" type="search" id="form1" class="form-control" placeholder="Search" name="search" />
+
+                    </div>
+                    <button style="width:10%;height:50px" type="submit" class="btn btn-primary" data-mdb-ripple-init asp-controller="book" asp-action="index">
+                        <i class="fas fa-search"></i>
+                    </button>
+              </form>
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+
+                    <tr>
+                        <th scope="row">
+                            <img style="width:100px" src="/images/@book.ImgUrl" />
+                        </th>
+                        <td>@book.Name</td>
+                        <td>@book.Price</td>
+                        <td>
+
+                            <a asp-controller="book" asp-action="Delete" asp-route-id="@book.Id" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>
+                            <a asp-controller="book" asp-action="Update" asp-route-id="@book.Id" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a asp-area="" asp-controller="blog" asp-action="detail" asp-route-id="@book.Id" class="btn btn-outline-info"><i class="fa-solid fa-info"></i></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

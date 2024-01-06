@@ -10,25 +10,27 @@
     </div>
     <div class="form-in-login">
         <form method="post" asp-controller="account" asp-action="register">
-            <div>
-                <input asp-for="FullName" placeholder="Username " />
-                <span asp-validation-for="FullName" style="color:red"></span>
+            <div asp-validation-summary="All" style="color:red;text-align:center;">
             </div>
             <div>
-                <input asp-for="UserName" placeholder="FulName" />
-                <span asp-validation-for="UserName" style="color:red"></span>
+                <input asp-for="FullName" placeholder="FullName " />
+                <span asp-validation-for="FullName" style="color:red;text-align:center;"></span>
+            </div>
+            <div>
+                <input asp-for="UserName" placeholder="UserName" />
+                <span asp-validation-for="UserName" style="color:red;text-align:center;"></span>
             </div>
             <div>
                 <input asp-for="Email" placeholder="Email" />
-                <span asp-validation-for="Email" style="color:red"></span>
+                <span asp-validation-for="Email" style="color:red;text-align:center;"></span>
             </div>
             <div>
                 <input asp-for="Password" placeholder="Password" type="password"/>
-                <span asp-validation-for="Password" style="color:red"></span>
+                <span asp-validation-for="Password" style="color:red;text-align:center;"></span>
             </div>
             <div>
                 <input asp-for="RepeatPassword" placeholder="RepeatPassword" type="password"/>
-                <span asp-validation-for="RepeatPassword" style="color:red"></span>
+                <span asp-validation-for="RepeatPassword" style="color:red;text-align:center;"></span>
             </div>
             <div>
               

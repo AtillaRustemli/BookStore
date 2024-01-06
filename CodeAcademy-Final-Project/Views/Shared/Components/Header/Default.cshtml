@@ -26,12 +26,12 @@
                 <div class="header-top-links">
                     
                     <div>
-                        <a href="#">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <a asp-controller="wishlist" asp-action="index">
                             <i class="fa-regular fa-heart" style="color: #ffffff"></i>
                             <span> My Wish Lists</span>
                         </a>
-                        @if (User.Identity.IsAuthenticated)
-                        {
                             <a>
                                 <i class="fa-regular fa-user" style="color: #ffffff"></i>
                                 <span>@User.Identity.Name</span>
@@ -51,6 +51,11 @@
                         }
                         else
                         {
+
+                            <a asp-controller="account" asp-action="login">
+                                <i class="fa-regular fa-heart" style="color: #ffffff"></i>
+                                <span> My Wish Lists</span>
+                            </a>
                             <a asp-controller="account" asp-action="login">
                                 <i class="fa-regular fa-user" style="color: #ffffff"></i>
                                 <span>Login/ Join</span>

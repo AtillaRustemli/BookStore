@@ -36,12 +36,15 @@ namespace CodeAcademy_Final_Project.Services.AccountServices
                     return new ServiceResult { Success = false, Key = "UserNameOrEmail", ErrorMessage = "UserNameOrEmail / Password is wrong" };
                 }
             }
-
+            if (!user.EmailConfirmed)
+            {
+                await _signInManager.SignOutAsync();
+                return new ServiceResult { Success=false,Key= "Verify" , ErrorMessage= "Hesabiniz Verify olunmayib!" };
+            }
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.RemeberMe, true);
             if (result.IsLockedOut)
             {
                 return new ServiceResult { Success = false, Key = "UserNameOrEmail", ErrorMessage = "Hesabininz bloklanib" };
-
             }
             if (!result.Succeeded)
             {
@@ -64,7 +67,51 @@ namespace CodeAcademy_Final_Project.Services.AccountServices
 
 
 
-            return new ServiceResult { Success = true };
+            return new ServiceResult { Success = true,AppUser=user };
+        }
+
+        public async Task<List<ServiceResult>> RegisterServ(RegisterVM registerVM)
+        {
+            var serviceResultList = new List<ServiceResult>();
+
+            if (await _userManager.FindByEmailAsync(registerVM.Email) != null)
+            {
+                serviceResultList.Add(new ServiceResult { Success = false, Key = "Email", ErrorMessage = "Bu email adina hesab movcuddur!" });
+              return serviceResultList;
+            }
+            var role = await _roleManager.FindByNameAsync("Member");
+            AppUser user = new();
+            user.UserName = registerVM.UserName;
+            user.FullName = registerVM.FullName;
+            user.Email = registerVM.Email;
+
+            IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
+            if (!result.Succeeded)
+            {
+               
+                foreach (var error in result.Errors)
+                {
+                    serviceResultList.Add(new ServiceResult { Success = false, Key ="Error", ErrorMessage = error.Description.ToString() });
+                   
+                }
+
+                return serviceResultList;
+                
+            }
+
+            LoginVM loginVM = new();
+            loginVM.UserNameOrEmail = registerVM.UserName;
+            loginVM.Password = registerVM.Password;
+
+
+
+
+
+            await _userManager.AddToRoleAsync(user, role.ToString());
+            await _userManager.UpdateAsync(user);
+            serviceResultList.Add(new ServiceResult { Success = true ,AppUser=user});
+       
+            return serviceResultList;
         }
     }
 }

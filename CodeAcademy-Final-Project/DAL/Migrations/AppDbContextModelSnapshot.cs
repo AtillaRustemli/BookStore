@@ -106,7 +106,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 5, 22, 16, 34, 810, DateTimeKind.Local).AddTicks(2755),
+                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 683, DateTimeKind.Local).AddTicks(9583),
                             SellCount = 0L
                         });
                 });
@@ -301,7 +301,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 5, 22, 16, 34, 810, DateTimeKind.Local).AddTicks(3797),
+                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(613),
                             SellCount = 0L,
                             Width = 15.1
                         });
@@ -477,7 +477,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 5, 22, 16, 34, 810, DateTimeKind.Local).AddTicks(4639),
+                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(1491),
                             SellCount = 0L
                         });
                 });
@@ -611,7 +611,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2024, 1, 5, 22, 16, 34, 810, DateTimeKind.Local).AddTicks(5177),
+                            EndTime = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(2042),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -1072,10 +1072,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId1")
+                    b.Property<string>("AppUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -1105,9 +1102,9 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
-                    b.ToTable("WishList");
+                    b.ToTable("WishLists");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -1139,22 +1136,22 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2ccb8c2c-4e69-4f20-815d-06d7bb7dd937",
-                            ConcurrencyStamp = "7aaa900f-e0ab-4a1d-bd84-1613b62565dc",
+                            Id = "0b796b37-bc35-4c39-90e4-e97b0616124b",
+                            ConcurrencyStamp = "cf5e4f56-2918-49c6-8bff-95117f7d69f6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "0099b685-0ced-4c57-ae70-26659ad9e441",
-                            ConcurrencyStamp = "9c335fb8-a3ff-4f39-b4b8-63c06cec1137",
+                            Id = "e07de3ef-5676-4ec8-9bf5-14fa223655ba",
+                            ConcurrencyStamp = "450413ea-900a-4dfe-91c1-dd715893c76b",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
-                            Id = "9da86d99-21ad-45ab-9b2b-c3e8864b4bac",
-                            ConcurrencyStamp = "51d097a6-4f06-4f7f-b7ac-cf62e2295137",
+                            Id = "5754234e-dbc1-4ae5-8d0d-89ead5ccad7a",
+                            ConcurrencyStamp = "4774c4ec-f440-4b7d-81b4-f978d37f178f",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });
@@ -1677,7 +1674,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                 {
                     b.HasOne("CodeAcademy_Final_Project.Models.AppUser", "AppUser")
                         .WithMany("WishLists")
-                        .HasForeignKey("AppUserId1")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
