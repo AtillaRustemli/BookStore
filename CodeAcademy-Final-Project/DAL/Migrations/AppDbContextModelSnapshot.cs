@@ -106,7 +106,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 683, DateTimeKind.Local).AddTicks(9583),
+                            Released = new DateTime(2024, 2, 7, 22, 33, 7, 258, DateTimeKind.Local).AddTicks(8095),
                             SellCount = 0L
                         });
                 });
@@ -301,7 +301,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(613),
+                            Released = new DateTime(2024, 2, 7, 22, 33, 7, 258, DateTimeKind.Local).AddTicks(9081),
                             SellCount = 0L,
                             Width = 15.1
                         });
@@ -477,7 +477,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             PopularityCount = 0L,
                             Price = 11.0,
                             PromotionId = 1,
-                            Released = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(1491),
+                            Released = new DateTime(2024, 2, 7, 22, 33, 7, 258, DateTimeKind.Local).AddTicks(9952),
                             SellCount = 0L
                         });
                 });
@@ -611,7 +611,7 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                             Id = 1,
                             Description = "Look at our fantasting promotion.This is amasing!!!",
                             DetailImageUrl = "promotion-detail1.jpg",
-                            EndTime = new DateTime(2024, 1, 6, 21, 45, 25, 684, DateTimeKind.Local).AddTicks(2042),
+                            EndTime = new DateTime(2024, 2, 7, 22, 33, 7, 259, DateTimeKind.Local).AddTicks(476),
                             ImgUrl = "promotion-image1.jpg",
                             Name = "New Year Discount",
                             Title = "Amasing new year discount"
@@ -1136,22 +1136,22 @@ namespace CodeAcademy_Final_Project.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0b796b37-bc35-4c39-90e4-e97b0616124b",
-                            ConcurrencyStamp = "cf5e4f56-2918-49c6-8bff-95117f7d69f6",
+                            Id = "e8bba3b5-ab94-4dd6-bd93-85d02cbcde86",
+                            ConcurrencyStamp = "30438e5d-2fcc-45be-971d-be48faced5f8",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "e07de3ef-5676-4ec8-9bf5-14fa223655ba",
-                            ConcurrencyStamp = "450413ea-900a-4dfe-91c1-dd715893c76b",
+                            Id = "931ac004-2d84-43be-b84e-122853f6cf4a",
+                            ConcurrencyStamp = "56497b4f-e5ff-42b4-a8db-0024656e05f6",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
-                            Id = "5754234e-dbc1-4ae5-8d0d-89ead5ccad7a",
-                            ConcurrencyStamp = "4774c4ec-f440-4b7d-81b4-f978d37f178f",
+                            Id = "1b2caf5e-e162-4cd8-9779-71b540879b2d",
+                            ConcurrencyStamp = "1445d481-4eb9-424d-b50e-fc88649b40de",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });

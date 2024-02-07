@@ -1,4 +1,5 @@
 ﻿using CodeAcademy_Final_Project.DAL;
+using CodeAcademy_Final_Project.Models;
 using CodeAcademy_Final_Project.ViewModels.BookViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,13 @@ namespace CodeAcademy_Final_Project.Controllers
         }
         public IActionResult Detail(int? id)
         {
+            var a= _context.BookCategory
+                .Include(bc => bc.Category)
+                .Include(bc => bc.Book)
+                .ThenInclude(b => b.BookAuthor)
+                .ThenInclude(ba => ba.Author)
+                .Where(bc => bc.BookId == id && bc.BookId != id)
+                .ToList();
             if (id == null) return NotFound();
             var book = _context.Book
                 .Include(b => b.BookCategory)
@@ -48,8 +56,11 @@ namespace CodeAcademy_Final_Project.Controllers
                 .ThenInclude(ba => ba.Genre)
                 .FirstOrDefault(b=>b.Id==id);
             if(book == null) return NotFound();
-            
-           
+            ViewBag.Books = _context.Book
+                .Include(b=>b.BookAuthor)
+                .ThenInclude(ba=>ba.Author)
+                .Include(b=>b.BookCategory)
+                .ToList();
 
             return View(book);
         }

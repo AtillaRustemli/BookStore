@@ -30,58 +30,6 @@
           </div>
         </div>
       </section>
-      <section class="discover-more">
-        <div class="container">
-          <h2>Discover More</h2>
-          <ul class="discover-me-icon-list">
-            <li>
-              <a href="#">
-                <span>
-                  <i class="fa-solid fa-star" style="color: #ffffff"></i>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>
-                  <i class="fa-solid fa-tag" style="color: #ffffff"></i>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>
-                  <i class="fa-brands fa-tiktok" style="color: #ffffff"></i>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>
-                  <i
-                    class="fa-solid fa-arrow-up-wide-short"
-                    style="color: #ffffff"
-                  ></i>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>
-                  <i class="fa-solid fa-hashtag" style="color: #ffffff"></i>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>
-                  <i class="fa-solid fa-gift" style="color: #ffffff"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
       <section class="trending-now">
         <div class="container">
           <div class="trending-now-left">
@@ -192,12 +140,12 @@
                 </a>
                 <div>
                   <h4>
-                    <a href="#">@book.Name</a>
+                    <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id">@book.Name</a>
                   </h4>
-                            <p>By :@* @foreach(var author in book.BookBaseAuthor.Where(ab => ab.BookBaseId == book.Id||ab.TypeId==1))
+                            <p>By : @foreach(var author in book.BookAuthor.Where(ab => ab.BookId == book.Id))
                                                 {
                                     @author.Author.Name
-                                }*@
+                                }
                             </p>
                 </div>
               </li>
@@ -213,15 +161,19 @@
           <ul class="popular-categories-in-books-list">
             @foreach(var category in Model.Categories)
             {
+                if (!category.BookBaseCategory.Any())
+                {
+                    continue;
+                }
             <li>
               <div class="popular-categories-in-books-list-images">
                 <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
-                   @* @foreach (var book in category.BookBaseCategory.Where(c=>c.TypeId==1).Take(3))
+                    @foreach (var book in category.BookBaseCategory.Take(3))
                      {
                          count++;
                          <img src="~/images/@book.Book.ImgUrl" class="@(count==2?"center-image":"")" alt="" />
 
-                     }*@
+                     }
                      @{
                        count = 0;
                      }

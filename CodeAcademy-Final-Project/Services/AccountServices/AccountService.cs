@@ -98,6 +98,8 @@ namespace CodeAcademy_Final_Project.Services.AccountServices
                 return serviceResultList;
                 
             }
+            await _userManager.AddToRoleAsync(user, role.ToString());
+            
 
             LoginVM loginVM = new();
             loginVM.UserNameOrEmail = registerVM.UserName;

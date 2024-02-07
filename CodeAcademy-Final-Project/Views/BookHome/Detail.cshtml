@@ -2,6 +2,7 @@
 @{
     ViewData["CssLink"] = " /assets/css/book-detail.css";
     ViewData["JsSource"] = "/assets/js/book-detaila.js";
+    int a = 0;
 }
 
 <div class="wish-list-drawer">
@@ -179,28 +180,28 @@
 <section class="scroller-in-book-detail">
     <div class="container">
         <div class="title">
-            <h2><a href="##">More Books in Fitness & Diet</a></h2>
-            <a href="#"><p>See All</p></a>
+      
         </div>
         <div class="scroller-book">
-            @foreach (var category in Model.BookCategory.Where(bc=>bc.BookId==Model.Id))
+            @foreach (var book in ViewBag.Books)
             {
+                a++;
             <div class="scroller-book-child">
                 <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/@category.Book.ImgUrl" alt="" />
+                        <a asp-controller="bookhome" asp-action="detail" asp-route-id="@book.Id">
+                            <img src="~/images/@book.ImgUrl" alt="" />
                     </a>
                 </div>
 
                 <div class="slider-child-info">
                     <div class="slider-child-info-text">
                         <h4>
-                                @foreach (var author in category.Book.BookAuthor.Where(ba => ba.BookId == category.Book.Id))
+                                @foreach (var author in book.BookAuthor)
                              {
                                    @author.Author.Name
                                 }
                         </h4>
-                        <p>@category.Book.Price</p>
+                            <p>@book.Price</p>
                     </div>
                     <div class="payment">
                         <a href="#">
@@ -211,186 +212,6 @@
             </div>
                 
             }
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroller-book-child">
-                <div class="slider-child-image">
-                    <a href="#">
-                        <img src="~/images/book-example4.jpg" alt="" />
-                    </a>
-                </div>
-
-                <div class="slider-child-info">
-                    <div class="slider-child-info-text">
-                        <h4>Rachel Jonson</h4>
-                        <p>$32.55</p>
-                    </div>
-                    <div class="payment">
-                        <a href="#">
-                            <p>Buy Now <i class="fa-solid fa-cart-shopping"></i></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

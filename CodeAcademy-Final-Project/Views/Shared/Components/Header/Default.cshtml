@@ -109,10 +109,6 @@
             <li><a asp-controller="bookhome" asp-action="index">Book</a></li>
             <li><a asp-controller="Ebook" asp-action="index">EBook</a></li>
             <li><a asp-controller="Abook" asp-action="index">AudioBook</a></li>
-            <li><a href="#">Promotions</a></li>
-            <li><a href="#">Magazines</a></li>
-            <li><a href="#">Stationary</a></li>
-            <li><a href="#">Gift Ideas</a></li>
         </ul>
         <div class="nav-right">
             <div class="busket-icon">
@@ -131,24 +127,26 @@
     </div>
     <ul class="drawer-nav-list">
         <li><a asp-controller="bookhome" asp-action="index">Book</a></li>
-        <li><a href="#">EBook</a></li>
+        <li><a asp-controller="Ebook" asp-action="index">EBook</a></li>
         <li><a asp-controller="Abook" asp-action="index">AudioBook</a></li>
-        <li><a href="#">Games&Puzzles</a></li>
-        <li><a href="#">Magazines</a></li>
-        <li><a href="#">Stationary</a></li>
-        <li><a href="#">Gift Ideas</a></li>
     </ul>
     <hr />
     <div class="drawer-links">
-        <a href="#">
-            <i class="fa-regular fa-bell" style="color: #000000"></i>
-            <span>Notifications</span>
-        </a>
         <div>
-            <a href="#">
-                <i class="fa-regular fa-heart" style="color: #000000"></i>
-                <span> My Wish Lists</span>
-            </a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="wishlist" asp-action="index">
+                    <i class="fa-regular fa-heart" style="color: #000000"></i>
+                    <span> My Wish Lists</span>
+                </a>
+            }
+            else
+            {
+                <a asp-controller="account" asp-action="login">
+                    <i class="fa-regular fa-heart" style="color: #000000"></i>
+                    <span> My Wish Lists</span>
+                </a>
+            }
             <a asp-controller="account" asp-action="login">
                 <i class="fa-regular fa-user" style="color: #000000"></i>
                 <span>Login/ Join</span>

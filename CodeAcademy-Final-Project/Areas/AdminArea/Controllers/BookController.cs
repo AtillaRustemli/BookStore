@@ -34,5 +34,24 @@ namespace CodeAcademy_Final_Project.Areas.AdminArea.Controllers
             }
             return View(book);
         }
+        public IActionResult Delete(int?id)
+        {
+            if(id==null) { return View(); }
+            var book = _context.Book.FirstOrDefault(b=>b.Id==id);
+            var bookAuthor=_context.BookAuthor.ToList();
+
+            if (book == null|| bookAuthor==null)
+            {
+                return NotFound();
+            }
+            foreach (var bookA in bookAuthor)
+            {
+            _context.BookAuthor.Remove(bookA);
+
+            }
+            _context.Book.Remove(book);
+            _context.SaveChanges();
+            return RedirectToAction("Index");   
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Net;
 using CodeAcademy_Final_Project.Services.EmailService;
 using CodeAcademy_Final_Project.Models.EmailModel;
+using System.Data;
 
 namespace CodeAcademy_Final_Project.Controllers
 {
@@ -60,6 +61,7 @@ namespace CodeAcademy_Final_Project.Controllers
 
                 }
             }
+            
 
 
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(registerService[0].AppUser);
@@ -70,7 +72,9 @@ namespace CodeAcademy_Final_Project.Controllers
             mailMessage.Subject = "Verify your Email";
             string body = string.Empty;
 
-            using (StreamReader streamReader = new("wwwroot/Templates/VerifyEmail.html"))
+            string filePath = System.IO.Path.GetFullPath("wwwroot");
+            Console.WriteLine(filePath);
+            using (StreamReader streamReader = new(Path.Combine("C:\\Users\\MSI\\OneDrive\\Desktop\\Final\\CodeAcademy-Final-Project\\CodeAcademy-Final-Project", "wwwroot\\Templates\\VerifyEmail.html")))
             {
                 body = streamReader.ReadToEnd();
             }
