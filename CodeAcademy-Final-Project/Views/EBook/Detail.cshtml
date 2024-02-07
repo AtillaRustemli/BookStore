@@ -116,12 +116,13 @@
                     </p>
                     <p class="author-name">
                         By :
-                        <a href="#">
+                      
                             @foreach (var author in Model.EBookAuthor.Where(ab => ab.EBookId == Model.Id))
                             {
+                            <a asp-controller="author" asp-action="index" asp-route-id="@author.AuthorId">
                                 @(author.Author.Name + ",")
+                            </a>
                             }
-                        </a>
                     </p>
                 </div>
                 <div class="about-book">

@@ -159,12 +159,13 @@
       <section class="popular-categories-in-books">
         <div class="container">
           <ul class="popular-categories-in-books-list">
-            @foreach(var category in Model.Categories)
+            @foreach (var category in Model.Categories)
             {
                 if (!category.BookBaseCategory.Any())
                 {
                     continue;
                 }
+<<<<<<< HEAD
             <li>
               <div class="popular-categories-in-books-list-images">
                 <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
@@ -185,6 +186,28 @@
                 </a>
               </div>
             </li>
+=======
+                <li>
+                    <div class="popular-categories-in-books-list-images">
+                        <a asp-controller="category" asp-action="index" asp-route-id="@category.Id">
+                            @foreach (var book in category.BookBaseCategory.Take(3))
+                            {
+                                count++;
+                                <img src="~/images/@book.Book.ImgUrl" class="@(count==2?"center-image":"")" alt="" />
+
+                            }
+                            @{
+                                count = 0;
+                            }
+                        </a>
+                    </div>
+                    <div class="category-name">
+                        <a href="#">
+                            <h2>@category.Name</h2>
+                        </a>
+                    </div>
+                </li>
+>>>>>>> 1889090b32e2d7e2f33be2b522e3ba9810934869
             }
           </ul>
         </div>

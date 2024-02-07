@@ -1,0 +1,47 @@
+﻿@model CheckExcistenceVM
+
+
+<p>Do this book have @if (Model.EBookId == null)
+    {
+        <a asp-controller="ebook" asp-action="create" asp-route-bookId="
+
+      @if(Model.BookId == null){
+    @Model.ABookId
+  }
+              else{
+    @Model.BookId
+  }
+">eBook</a> @("version")
+         
+
+    }
+    @if (Model.BookId == null)
+    {
+        <a asp-controller="book" asp-action="create" asp-route-bookId="
+
+
+      @if(Model.EBookId == null){
+    @Model.ABookId
+  }
+              else{
+    @Model.EBookId
+  }
+">eBook</a> @("version")
+
+
+    }
+    or
+    @if (Model.ABookId == null)
+    {
+        <a asp-controller="abook" asp-action="create" asp-route-bookId="
+
+             @if(Model.BookId == null){ @Model.EBookId  }
+              else{ @Model.BookId  }
+                
+
+                                 ">AudioBook</a> @("version")
+
+
+    }
+    ?
+     </p>
